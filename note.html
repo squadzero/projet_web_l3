@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="author">
+
+  <title>Projet web.</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/trajet.css" rel="stylesheet">
+  <link href="css/bootstrap-datepicker3.css" rel="stylesheet">
+  <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">
+  <link href="css/bootstrap-datepicker3.standalone.css" rel="stylesheet">
+  <link href="css/bootstrap-datepicker3.standalone.min.css" rel="stylesheet">
+  <link href="css/bootstrap-formhelpers.css" rel="stylesheet">
+  <link href="css/bootstrap-formhelpers.min.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Navigation.</span></button> <a class="navbar-brand" href="index.html">Accueil</a>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="faq.html">F.A.Q.</a>
+          </li>
+
+
+          <li>
+            <a href="contact.html">Contact.</a>
+          </li>
+
+
+          <li>
+            <a href="about.html">À propos.</a>
+          </li>
+        </ul>
+        <a class="btn navbar-btn btn-success disabled" href="note.html" type="button"><i class="glyphicon glyphicon-edit"></i></a> <a class="btn btn-primary navbar-btn" href="search.html" role="button">Recherche et accès aux différentes critiques.</a> <a class="btn btn-primary navbar-btn" href="connexion.html" role="button">Connexion.</a> <a class="btn btn-primary navbar-btn" href="inscription.html" role="button">Inscription.</a>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <p class="btn btn-info dropdown-toggle navbar-btn" data-toggle="dropdown">Profil ! <span class="caret"></span></p>
+
+
+            <ul class="dropdown-menu">
+              <li>
+                <a href="preferences.html">Profil.</a>
+              </li>
+
+
+              <li>
+                <a href="mesnotes.html">Voir mes critiques.</a>
+              </li>
+
+
+              <li>
+                <a href="disconnect.php">Déconnexion.</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <br>
+
+
+    <div class="col-md-7 col-lg-7 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-2 toppad">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Créer un nouvelle critique.</h3>
+        </div>
+
+
+        <div class="panel-body">
+          <div class="row">
+            <div align="center" class="col-md-1 col-lg-1">
+            </div>
+
+
+            <div class=" col-md-9 col-lg-9">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td>
+                    </td>
+
+                    <td><input class="form-control" name="title" placeholder="Entrez le titre de votre critique..." type="text">
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                    </td>
+
+                    <td><input class="form-control" name="dep" placeholder="Entrez le nom du film concerné..." type="text">
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                    </td>
+
+                    <td><input class="form-control" name="appre" placeholder="Entrez votre appréciation générale..." type="text">
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                    </td>
+
+                    <td>
+                      <div class="bfh-datepicker"></div>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                    </td>
+
+                    <td>
+                      <div class="input-group">
+                        <span class="input-group-addon"></span> 
+
+                        <textarea class="form-control" id="comment" placeholder="Entrez votre critique..." rows="5"></textarea>
+                      </div>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                    </td>
+
+                    <td>
+                      <div class="dropdown">
+                        <button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
+
+                        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+                          <li>
+                            <a data-value="1" href="#">1</a>
+                          </li>
+
+
+                          <li>
+                            <a data-value="2" href="#">2</a>
+                          </li>
+
+
+                          <li>
+                            <a data-value="3" href="#">3</a>
+                          </li>
+
+
+                          <li>
+                            <a data-value="4" href="#">4</a>
+                          </li>
+
+
+                          <li>
+                            <a data-value="5" href="#">5</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <a class="btn btn-success" href="#">Publier critique.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-1.12.2.js">
+  </script> 
+  <script src="js/bootstrap.min.js">
+  </script> 
+  <script src="js/bootstrap-datepicker.js">
+  </script> 
+  <script src="js/bootstrap-datepicker.min.js">
+  </script> 
+  <script src="js/bootstrap-formhelpers.js">
+  </script> 
+  <script src="js/test.js">
+  </script>
+</body>
+</html>
