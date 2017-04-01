@@ -15,8 +15,6 @@ body {
     opacity: 0.8;
 }
 
-/* Home Page Carousel */
-
 header.carousel {
     height: 50%;
 }
@@ -34,13 +32,9 @@ header.carousel .fill {
     background-size: cover;
 }
 
-/* 404 Page Styles */
-
 .error-404 {
     font-size: 100px;
 }
-
-/* Pricing Page Styles */
 
 .price {
     display: block;
@@ -72,13 +66,9 @@ header.carousel .fill {
     }
 }
 
-/* Footer Styles */
-
 footer {
     margin: 50px 0;
 }
-
-/* Responsive Styles */
 
 @media(max-width:991px) {
     .customer-img,
