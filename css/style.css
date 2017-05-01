@@ -4,7 +4,7 @@ body {
 }
 
 body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 50px; 
 }
 
 .img-portfolio {
@@ -14,8 +14,6 @@ body {
 .img-hover:hover {
     opacity: 0.8;
 }
-
-/* Home Page Carousel */
 
 header.carousel {
     height: 50%;
@@ -34,13 +32,9 @@ header.carousel .fill {
     background-size: cover;
 }
 
-/* 404 Page Styles */
-
 .error-404 {
     font-size: 100px;
 }
-
-/* Pricing Page Styles */
 
 .price {
     display: block;
@@ -59,6 +53,52 @@ header.carousel .fill {
     font-style: italic;
 }
 
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+    margin-right: 10px;
+}
+
+.panel-info {
+    border-color: #5cb85c;
+}
+
+.panel-info > .panel-heading {
+  background-color: #5cb85c;
+  color: #f5f5f5;
+}
+
+.toppad{
+    margin-top:20px;
+}
+
+
 @media screen and (min-width: 768px) {
     #adv-search {
         width: 500px;
@@ -72,13 +112,9 @@ header.carousel .fill {
     }
 }
 
-/* Footer Styles */
-
 footer {
     margin: 50px 0;
 }
-
-/* Responsive Styles */
 
 @media(max-width:991px) {
     .customer-img,
