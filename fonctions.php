@@ -1,5 +1,21 @@
 <?php
 
-	function ajoutUtilisateur($_POST['nom'], $_POST['prenom'], $_POST['login'], $_POST['mdp'], $_POST['mail'], $_POST['tel'])
+	include('connexionBD.php');
 
+	function estConnecte()
+	{
+		if( session_status() == PHP_SESSION_ACTIVE)
+		{
+			if( isset($_SESSION['login']) && trim($_SESSION['login']) != '')
+				return true;
+		}
+	}
+	
+	function ajouteCritique()
+	{
+	
+	}
+	
+	
+	
 ?>

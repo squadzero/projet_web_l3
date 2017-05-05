@@ -1,62 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Projet web.</title>
-        <link href="css/index.css" rel="stylesheet">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-</head>
 
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Navigation.</span>
-                </button>
-                <a class="navbar-brand" href="index.html">Accueil.</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                  <li>
-                     <a href="contact.html">Contact.</a>
-                  </li>
-                  <li>
-                     <a href="about.html">À propos.</a>
-                  </li>
-               </ul>
-            <a href="note.html" type="button" class="btn navbar-btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
-            <a class="btn btn-primary disabled navbar-btn" href="search.html" role="button">Recherche et accès aux différentes critiques.</a>         
-            <a class="btn btn-primary navbar-btn" href="connexion.html"  role="button">Connexion.</a>
-            <a class="btn btn-primary navbar-btn" href="inscription.html"  role="button">Inscription.</a>
-            
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-      
-                        <p href="#" class="btn btn-info dropdown-toggle navbar-btn" data-toggle="dropdown">Profil !</a> 
-                        <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="preferences.html">Profil.</a>
-                                </li>
-                                <li>
-                                    <a href="critiques.html">Voir mes critiques.</a>
-                                </li>
-                                <li>
-                                    <a href="disconnect.php">Déconnexion.</a>
-                                </li>
-                            </ul>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php include('header.php');?>
+<?php include('navbar.php');?>
+
     <!-- Page Content -->
     <div class="container">
 
@@ -142,12 +87,12 @@
 
                 <div class="row">
 
-                    <a href="item.html">
+                    <a href="item.php">
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x150" alt="">
                                 <div class="caption">
-                                    <h4><a href="item.html">Critique 1.</a>
+                                    <h4><a href="item.php">Critique 1.</a>
                                     </h4>
                                 </div>
                                 <div class="ratings">
@@ -164,12 +109,12 @@
                         </div>
                     </a>
 
-                    <a href="item.html">
+                    <a href="item.php">
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x150" alt="">
                                 <div class="caption">
-                                    <h4><a href="item.html">Critique 2.</a>
+                                    <h4><a href="item.php">Critique 2.</a>
                                     </h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
@@ -187,12 +132,12 @@
                         </div>
                     </a>
 
-                    <a href="item.html">
+                    <a href="item.php">
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x150" alt="">
                                 <div class="caption">
-                                    <h4><a href="item.html"></a>
+                                    <h4><a href="item.php"></a>
                                     </h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
@@ -209,7 +154,7 @@
                         </div>
                     </a>
 
-                    <a href="item.html">
+                    <a href="item.php">
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x150" alt="">
@@ -230,12 +175,12 @@
                         </div>
                     </a>
 
-                    <a href="item.html">
+                    <a href="item.php">
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x150" alt="">
                                 <div class="caption">
-                                    <h4><a href="item.html">Critique 5.</a>
+                                    <h4><a href="item.php">Critique 5.</a>
                                     </h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>

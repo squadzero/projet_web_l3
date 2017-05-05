@@ -1,65 +1,6 @@
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="" name="description">
-    <meta content="" name="author">
-
-    <title>Projet web.</title>
-    <link href="css/index.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Navigation.</span></button> <a class="navbar-brand" href="index.html">Accueil.</a>
-
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="contact.html">Contact.</a>
-                    </li>
-
-
-                    <li>
-                        <a href="about.html">À propos.</a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <a class="btn navbar-btn btn-success" href="note.html" type="button"><i class="glyphicon glyphicon-edit"></i></a> <a class="btn btn-primary navbar-btn" href="search.html" role="button">Recherche et accès aux différentes critiques.</a> <a class="btn btn-primary navbar-btn" href="connexion.html" role="button">Connexion.</a> <a class="btn btn-primary navbar-btn" href="inscription.html" role="button">Inscription.</a>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <p class="btn btn-info dropdown-toggle navbar-btn" data-toggle="dropdown">Profil ! <span class="caret"></span></p>
-
-
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="preferences.html">Profil.</a>
-                            </li>
-
-
-                            <li>
-                                <a href="critiques.html">Voir mes critiques.</a>
-                            </li>
-
-
-                            <li>
-                                <a href="disconnect.php">Déconnexion.</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php include('header.php');?>
+<?php include('navbar.php');?>
 
     <div class="container">
 
@@ -70,7 +11,7 @@
 
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.html">Accueil.</a>
+                        <a href="index.php">Accueil.</a>
                     </li>
 
 
