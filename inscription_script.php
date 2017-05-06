@@ -10,7 +10,7 @@
 				
 				$req = $db->prepare('INSERT INTO utilisateurs VALUES(:pseudo, :pwd, :date_insc, :sexe);');
 				$req->bindValue(':pseudo', $_POST['login']);
-				$req->bindValue(':pwd', $_POST['mdp']);
+				$req->bindValue(':pwd', sha1($_POST['mdp']));
 				$req->bindValue(':date_insc', $date);
 				$req->bindValue(':sexe', $_POST['sexe']);
 

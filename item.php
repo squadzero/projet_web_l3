@@ -1,24 +1,54 @@
 
 <?php include('header.php');?>
 <?php include('navbar.php');?>
+
+<?php
+	if( isset($_GET['serie']) )
+	{
+		try
+		{
+			$req = $db->prepare("SELECT ID_SERIE, TITRE_SERIE, ANNEE_SERIE, PAYS_SERIE, SUM_SERIE from series WHERE TITRE_SERIE=:nomSerie;");
+			$req->bindValue(':nomSerie', $_GET['serie']);
+			
+			$req->execute();
+			$res = $req->fetch(PDO::FETCH_ASSOC);
+			
+			
+			$req2 = $db->prepare("SELECT URL FROM photo_serie WHERE ID_SERIE=:idSerie;");
+			$req2->bindValue(':idSerie', $res['ID_SERIE']);
+			
+			$req2->execute();
+			$res2 = $req2->fetch(PDO::FETCH_ASSOC);
+		}
+		catch(PDOException $e)
+		{
+			die( 'Erreur : ' . $e->getMessage());
+		}
+		
+		if(!$res) // s'il n y a pas de resultat pour la série
+		{
+			echo 'Pas de resultat pour la serie';
+		}
+		else
+		{
+			echo'
     <!-- Page Content -->
-
-
+	
     <div class="container">
         <div class="row row-centered">
             <div class="col-md-9 col-centered">
                 <div class="thumbnail">
-                    <img alt="" class="img-responsive" src="http://placehold.it/800x300">
+                    <img alt="" class="img-responsive" src="'.$res2['URL'].'">
 
                     <div class="caption-full">
-                        <h4><a href="#">Titre de la critique.</a>
+                        <h4><a href="#">'.$res['TITRE_SERIE'].'</a>
                         </h4>
 
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>'.$res['PAYS_SERIE'].' ,'.$res['ANNEE_SERIE'].'</p>
 
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>'.$res['SUM_SERIE'].'</p>
                     </div>
 
 
@@ -78,3 +108,7 @@
 
 </body>
 </html>
+';
+	}
+	}
+?>

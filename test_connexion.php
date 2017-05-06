@@ -24,7 +24,7 @@ include('connexionBD.php');
 			}
 			else 
 			{
-				if($_POST['mdp'] != $res['PWD'])
+				if(sha1($_POST['mdp']) != $res['PWD'])
 				{
 					echo 'Mauvais mot de passe';
 				}
@@ -34,7 +34,6 @@ include('connexionBD.php');
 					$_SESSION['login'] = $_POST['mail'];
 					// redirection
 					header('location: index.php');
-					//exit(); // peut etre pas obligatoire
 				}
 			}
 		}
