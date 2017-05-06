@@ -32,6 +32,7 @@
 		else
 		{
 			echo'
+
     <!-- Page Content -->
 	
     <div class="container">
