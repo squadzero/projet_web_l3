@@ -29,7 +29,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
 			  <div class="panel panel-info">
 				<div class="panel-heading">
-				  <h3 class="panel-title">'.$_SESSION['login'].'</h3>
+				  <h3 class="panel-title">'.htmlspecialchars($_SESSION['login']).'</h3>
 				</div>
 
 
@@ -45,7 +45,7 @@
 						  <tr>
 							<td>Pseudo :</td>
 
-							<td>'.$res['PSEUDO'].'</td>
+							<td>'.htmlspecialchars($res['PSEUDO']).'</td>
 						  </tr>
 
 
@@ -59,13 +59,13 @@
 						  <tr>
 							<td>Sexe :</td>
 
-							<td>'.$sexe.'</td>
+							<td>'.htmlspecialchars($sexe).'</td>
 						  </tr>
 	
 						  <tr>
 							<td>Inscritpion :</td>
 
-							<td>'.$date.'</td>
+							<td>'.htmlspecialchars($date).'</td>
 						  </tr>
 
 						</tbody>

@@ -73,22 +73,22 @@
         <div class="row row-centered">
             <div class="col-md-9 col-centered">
                 <div class="thumbnail">
-                    <img alt="" class="img-responsive" src="'.$res2['URL'].'">
+                    <img alt="" class="img-responsive" src="'.htmlspecialchars($res2['URL']).'">
 
                     <div class="caption-full">
-                        <h4><a href="#">'.$res['NOM_EP'].'</a>
+                        <h4><a href="#">'.htmlspecialchars($res['NOM_EP']).'</a>
                         </h4>
 
 
-                        <p>'.$res['DUREE_EP'].' minutes, diffusé le '.$date.'</p>
+                        <p>'.htmlspecialchars($res['DUREE_EP']).' minutes, diffusé le '.htmlspecialchars($date).'</p>
 
 
-                        <p>'.$res['SUM_EP'].'</p>';
+                        <p>'.htmlspecialchars($res['SUM_EP']).'</p>';
 						
 						if($res3)
 						{
 							echo '<p>';
-							echo 'Acteur : <a href="acteurUni.php?idInd='.$res3['ID_IND'].'">'.$res4['PREN_IND'].' '.$res4['NOM_IND'].'</a>';
+							echo 'Acteur : <a href="acteurUni.php?idInd='.htmlspecialchars($res3['ID_IND']).'">'.htmlspecialchars($res4['PREN_IND']).' '.htmlspecialchars($res4['NOM_IND']).'</a>';
 							$res3 = $req3->fetch(PDO::FETCH_ASSOC);
 							
 							do
@@ -99,7 +99,7 @@
 								$req4->execute();
 								$res4 = $req4->fetch(PDO::FETCH_ASSOC);
 
-								echo ', <a href="acteur.php">'.$res4['PREN_IND'].' '.$res4['NOM_IND'].'</a>';
+								echo ', <a href="acteurUni.php?idInd='.htmlspecialchars($res3['ID_IND']).'">'.htmlspecialchars($res4['PREN_IND']).' '.htmlspecialchars($res4['NOM_IND']).'</a>';
 							}while( $res3 = $req3->fetch(PDO::FETCH_ASSOC) );
 				
 							echo '</p>';
@@ -108,7 +108,7 @@
 						if($res5)
 						{
 							echo '<p>';
-							echo 'Réalisateur : <a href="acteurUni.php?idInd='.$res5['ID_IND'].'">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
+							echo 'Réalisateur : <a href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'">'.htmlspecialchars($res6['PREN_IND']).' '.htmlspecialchars($res6['NOM_IND']).'</a>';
 							$res5 = $req5->fetch(PDO::FETCH_ASSOC);
 							
 							do
@@ -119,7 +119,7 @@
 								$req6->execute();
 								$res6 = $req6->fetch(PDO::FETCH_ASSOC);
 
-								echo ', <a href="acteur.php">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
+								echo ', <a href="acteur.php">'.htmlspecialchars($res6['PREN_IND']).' '.htmlspecialchars($res6['NOM_IND']).'</a>';
 							}while( $res5 = $req5->fetch(PDO::FETCH_ASSOC) );
 				
 							echo '</p>';

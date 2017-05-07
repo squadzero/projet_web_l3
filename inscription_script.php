@@ -6,7 +6,7 @@
 			try
 			{
 				$req = $db->prepare('SELECT PSEUDO FROM utilisateurs WHERE PSEUDO=:pseudo;');
-				$req->bindValue(':pseudo', $_POST['login']);
+				$req->bindValue(':pseudo', htmlspecialchars($_POST['login']));
 				$req->execute();
 				$res = $req->fetch(PDO::FETCH_ASSOC);
 				
@@ -21,7 +21,7 @@
 						$sexe = 'F';
 					echo $sexe;
 					$req2 = $db->prepare('INSERT INTO utilisateurs VALUES(:pseudo, :pwd, :date_insc, :sexe);');
-					$req2->bindValue(':pseudo', $_POST['login']);
+					$req2->bindValue(':pseudo', htmlspecialchars($_POST['login']));
 					$req2->bindValue(':pwd', sha1($_POST['mdp']));
 					$req2->bindValue(':date_insc', $date);
 					$req2->bindValue(':sexe', $sexe);

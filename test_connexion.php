@@ -9,7 +9,7 @@ include('connexionBD.php');
 			{
 				$req = $db->prepare("SELECT PWD FROM utilisateurs
 									WHERE PSEUDO=:pseudo");
-				$req->bindValue(':pseudo', $_POST['mail']);
+				$req->bindValue(':pseudo', htmlspecialchars($_POST['mail']));
 				$req->execute();
 				$res = $req->fetch(PDO::FETCH_ASSOC);
 			}

@@ -81,18 +81,18 @@
         <div class="row row-centered">
             <div class="col-md-9 col-centered">
                 <div class="thumbnail">
-                    <img alt="" class="img-responsive" src="'.$res2['URL'].'">
+                    <img alt="" class="img-responsive" src="'.htmlspecialchars($res2['URL']).'">
 
                     <div class="caption-full">
-                        <h4><a href="#">'.$res['TITRE_SERIE'].'</a>
+                        <h4><a href="#">'.htmlspecialchars($res['TITRE_SERIE']).'</a>
                         </h4>';
 						
 						// Une itération de fetch avant pour gerer affichage de la virgule
-						echo '<p>Genre : '.$res4['NOM_GENRE'];
+						echo '<p>Genre : '.htmlspecialchars($res4['NOM_GENRE']);
 						$res4 = $req4->fetch(PDO::FETCH_ASSOC);
 						do
 						{
-							echo ', '.$res4['NOM_GENRE'];
+							echo ', '.htmlspecialchars($res4['NOM_GENRE']);
 						}while( $res4 = $req4->fetch(PDO::FETCH_ASSOC) );
 						echo '</p>';
 						
@@ -100,7 +100,7 @@
 						if($res6)
 						{
 							echo '<p>';
-							echo 'Créateur : <a href="acteurUni.php?idInd='.$res5['ID_IND'].'">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
+							echo 'Créateur : <a href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'">'.htmlspecialchars($res6['PREN_IND']).' '.htmlspecialchars($res6['NOM_IND']).'</a>';
 							$res5 = $req5->fetch(PDO::FETCH_ASSOC);
 							
 							do
@@ -111,7 +111,7 @@
 								$req6->execute();
 								$res6 = $req6->fetch(PDO::FETCH_ASSOC);
 									
-								echo ', <a href="acteurUni.php?idInd='.$res5['ID_IND'].'">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
+								echo ', <a href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'">'.htmlspecialchars($res6['PREN_IND']).' '.htmlspecialchars($res6['NOM_IND']).'</a>';
 							}while( $res5 = $req5->fetch(PDO::FETCH_ASSOC) );
 							
 							echo '</p>';	
@@ -120,7 +120,7 @@
 						if($res8)
 						{
 							echo '<p>';
-							echo 'Producteur : <a href="acteurUni.php?idInd='.$res7['ID_IND'].'">'.$res8['PREN_IND'].' '.$res8['NOM_IND'].'</a>';
+							echo 'Producteur : <a href="acteurUni.php?idInd='.htmlspecialchars($res7['ID_IND']).'">'.htmlspecialchars($res8['PREN_IND']).' '.htmlspecialchars($res8['NOM_IND']).'</a>';
 							$res7 = $req7->fetch(PDO::FETCH_ASSOC);
 							
 							do
@@ -131,22 +131,22 @@
 								$req8->execute();
 								$res8 = $req8->fetch(PDO::FETCH_ASSOC);
 									
-								echo ', <a href="acteurUni.php?idInd='.$res7['ID_IND'].'">'.$res8['PREN_IND'].' '.$res8['NOM_IND'].'</a>';
+								echo ', <a href="acteurUni.php?idInd='.htmlspecialchars($res7['ID_IND']).'">'.htmlspecialchars($res8['PREN_IND']).' '.htmlspecialchars($res8['NOM_IND']).'</a>';
 							}while( $res7 = $req7->fetch(PDO::FETCH_ASSOC) );
 							
 							echo '</p>';	
 						}
 						echo'
 
-                        <p>'.$res['PAYS_SERIE'].', '.$res['ANNEE_SERIE'].'</p>
+                        <p>'.htmlspecialchars($res['PAYS_SERIE']).', '.htmlspecialchars($res['ANNEE_SERIE']).'</p>
 
 
-                        <p>'.$res['SUM_SERIE'].'</p>';
+                        <p>'.htmlspecialchars($res['SUM_SERIE']).'</p>';
 						
 						do
 						{
-							echo '<p>Saison '.$res3['SAISON_EP'].'</p>';
-							echo '<p><a href="episode.php?idEp='.$res3['ID_EP'].'"> - '.$res3['NOM_EP'].'</a></p>';
+							echo '<p>Saison '.htmlspecialchars($res3['SAISON_EP']).'</p>';
+							echo '<p><a href="episode.php?idEp='.htmlspecialchars($res3['ID_EP']).'"> - '.htmlspecialchars($res3['NOM_EP']).'</a></p>';
 						}while( $res3 = $req3->fetch(PDO::FETCH_ASSOC) );
 						echo'
                     </div>
