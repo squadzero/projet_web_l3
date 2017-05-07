@@ -3,63 +3,55 @@
 <?php include('navbar.php');?>
 
 <?php
-	if( isset($_GET['idSerie']) )
+	if( isset($_GET['idEp']) )
 	{
 		try
 		{
-			$req = $db->prepare("SELECT ID_SERIE, TITRE_SERIE, ANNEE_SERIE, PAYS_SERIE, SUM_SERIE from series WHERE ID_SERIE=:idSerie;");
-			$req->bindValue(':idSerie', $_GET['idSerie']);
+			$req = $db->prepare("SELECT ID_EP, NOM_EP, DUREE_EP, DATE_EP, SUM_EP, SAISON_EP, ID_SERIE from episodes WHERE ID_EP=:idEp;");
+			$req->bindValue(':idEp', $_GET['idEp']);
 			
 			$req->execute();
 			$res = $req->fetch(PDO::FETCH_ASSOC);
 			
-			
+
 			$req2 = $db->prepare("SELECT URL FROM photo_serie WHERE ID_SERIE=:idSerie;");
 			$req2->bindValue(':idSerie', $res['ID_SERIE']);
 			
 			$req2->execute();
 			$res2 = $req2->fetch(PDO::FETCH_ASSOC);
 			
+			// $mois = array( 01 => 'janvier', 02 => 'février', 03 => 'mars', 04 => 'avril', 05 => 'mai', 06 => 'juin', 07 => 'juillet', 08 => 'aout', 09 => 'septembre', 10 => 'octobre', 11 => 'novembre', 12 => 'décembre');
 			
-			$req3 = $db->prepare("SELECT ID_EP, NOM_EP, SAISON_EP FROM episodes WHERE ID_SERIE=:idSerie;");
+			$dateFormatSQL = $res['DATE_EP'];
+			$date = date("d-m-Y", strtotime($dateFormatSQL));
+			
+			// Pour les acteurs relatif a l'episode
+			$req3 = $db->prepare("SELECT ID_IND FROM jouer WHERE ID_SERIE=:idSerie AND ID_EP=:idEp;");
 			$req3->bindValue(':idSerie', $res['ID_SERIE']);
+			$req3->bindValue(':idEp', $_GET['idEp']);
 			
 			$req3->execute();
 			$res3 = $req3->fetch(PDO::FETCH_ASSOC);
 			
-			
-			$req4 = $db->prepare("SELECT NOM_GENRE FROM etre_du_genre WHERE ID_SERIE=:idSerie;");
-			$req4->bindValue(':idSerie', $res['ID_SERIE']);
+			$req4 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
+			$req4->bindValue(':idInd', $res3['ID_IND']);
 			
 			$req4->execute();
 			$res4 = $req4->fetch(PDO::FETCH_ASSOC);
 			
-			
-			$req5 = $db->prepare("SELECT ID_IND FROM creer WHERE ID_SERIE=:idSerie;");
+			// realisateur
+			$req5 = $db->prepare("SELECT ID_IND FROM realiser WHERE ID_SERIE=:idSerie AND ID_EP=:idEp;");
 			$req5->bindValue(':idSerie', $res['ID_SERIE']);
+			$req5->bindValue(':idEp', $_GET['idEp']);
 			
 			$req5->execute();
 			$res5 = $req5->fetch(PDO::FETCH_ASSOC);
-			
 			
 			$req6 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
 			$req6->bindValue(':idInd', $res5['ID_IND']);
 			
 			$req6->execute();
 			$res6 = $req6->fetch(PDO::FETCH_ASSOC);
-
-
-			$req7 = $db->prepare("SELECT ID_IND FROM produire WHERE ID_SERIE=:idSerie;");
-			$req7->bindValue(':idSerie', $res['ID_SERIE']);
-			
-			$req7->execute();
-			$res7 = $req7->fetch(PDO::FETCH_ASSOC);
-			
-			$req8 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
-			$req8->bindValue(':idInd', $res7['ID_IND']);
-			
-			$req8->execute();
-			$res8 = $req8->fetch(PDO::FETCH_ASSOC);
 			
 		}
 		catch(PDOException $e)
@@ -69,7 +61,7 @@
 		
 		if(!$res) // s'il n y a pas de resultat pour la série
 		{
-			echo 'Pas de resultat pour la serie';
+			echo 'Pas de resultat pour l\'episode';
 		}
 		else
 		{
@@ -84,71 +76,55 @@
                     <img alt="" class="img-responsive" src="'.$res2['URL'].'">
 
                     <div class="caption-full">
-                        <h4><a href="#">'.$res['TITRE_SERIE'].'</a>
-                        </h4>';
+                        <h4><a href="#">'.$res['NOM_EP'].'</a>
+                        </h4>
+
+
+                        <p>'.$res['DUREE_EP'].' minutes, diffusé le '.$date.'</p>
+
+
+                        <p>'.$res['SUM_EP'].'</p>';
 						
-						// Une itération de fetch avant pour gerer affichage de la virgule
-						echo '<p>Genre : '.$res4['NOM_GENRE'];
-						$res4 = $req4->fetch(PDO::FETCH_ASSOC);
-						do
-						{
-							echo ', '.$res4['NOM_GENRE'];
-						}while( $res4 = $req4->fetch(PDO::FETCH_ASSOC) );
-						echo '</p>';
-						
-						
-						if($res6)
+						if($res3)
 						{
 							echo '<p>';
-							echo 'Créateur : <a href="acteurUni.php?idInd='.$res5['ID_IND'].'">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
+							echo 'Acteur : <a href="acteurUni.php?idInd='.$res3['ID_IND'].'">'.$res4['PREN_IND'].' '.$res4['NOM_IND'].'</a>';
+							$res3 = $req3->fetch(PDO::FETCH_ASSOC);
+							
+							do
+							{
+								$req4 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
+								$req4->bindValue(':idInd', $res3['ID_IND']);
+								
+								$req4->execute();
+								$res4 = $req4->fetch(PDO::FETCH_ASSOC);
+
+								echo ', <a href="acteur.php">'.$res4['PREN_IND'].' '.$res4['NOM_IND'].'</a>';
+							}while( $res3 = $req3->fetch(PDO::FETCH_ASSOC) );
+				
+							echo '</p>';
+						}
+						
+						if($res5)
+						{
+							echo '<p>';
+							echo 'Réalisateur : <a href="acteurUni.php?idInd='.$res5['ID_IND'].'">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
 							$res5 = $req5->fetch(PDO::FETCH_ASSOC);
 							
 							do
 							{
 								$req6 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
 								$req6->bindValue(':idInd', $res5['ID_IND']);
-									
+								
 								$req6->execute();
 								$res6 = $req6->fetch(PDO::FETCH_ASSOC);
-									
-								echo ', <a href="acteurUni.php?idInd='.$res5['ID_IND'].'">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
+
+								echo ', <a href="acteur.php">'.$res6['PREN_IND'].' '.$res6['NOM_IND'].'</a>';
 							}while( $res5 = $req5->fetch(PDO::FETCH_ASSOC) );
-							
-							echo '</p>';	
+				
+							echo '</p>';
 						}
-						
-						if($res8)
-						{
-							echo '<p>';
-							echo 'Producteur : <a href="acteurUni.php?idInd='.$res7['ID_IND'].'">'.$res8['PREN_IND'].' '.$res8['NOM_IND'].'</a>';
-							$res7 = $req7->fetch(PDO::FETCH_ASSOC);
-							
-							do
-							{
-								$req8 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
-								$req8->bindValue(':idInd', $res7['ID_IND']);
-									
-								$req8->execute();
-								$res8 = $req8->fetch(PDO::FETCH_ASSOC);
-									
-								echo ', <a href="acteurUni.php?idInd='.$res7['ID_IND'].'">'.$res8['PREN_IND'].' '.$res8['NOM_IND'].'</a>';
-							}while( $res7 = $req7->fetch(PDO::FETCH_ASSOC) );
-							
-							echo '</p>';	
-						}
-						echo'
-
-                        <p>'.$res['PAYS_SERIE'].', '.$res['ANNEE_SERIE'].'</p>
-
-
-                        <p>'.$res['SUM_SERIE'].'</p>';
-						
-						do
-						{
-							echo '<p>Saison '.$res3['SAISON_EP'].'</p>';
-							echo '<p><a href="episode.php?idEp='.$res3['ID_EP'].'"> - '.$res3['NOM_EP'].'</a></p>';
-						}while( $res3 = $req3->fetch(PDO::FETCH_ASSOC) );
-						echo'
+						echo '
                     </div>
 
 
