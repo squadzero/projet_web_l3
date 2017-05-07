@@ -70,7 +70,7 @@
 
 						</tbody>
 					  </table>
-					  <a class="btn btn-primary" href="critiques.php">Voir les critiques de cette personne.</a>
+					  <a class="btn btn-success" href="critiques.php">Voir les critiques de cette personne.</a>
 					</div>
 				  </div>
 				</div>
