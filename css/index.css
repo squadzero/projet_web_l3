@@ -1963,3 +1963,11 @@ i.glyphicon-comment{
 .panel-default{
   margin-top: 20px;
 }
+
+
+/* POUR LE NOM QUAND ON EST CO */
+#nomUser
+{
+	margin-left:2%;
+	color:#9d9d9d;
+}

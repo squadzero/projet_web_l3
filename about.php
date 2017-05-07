@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">À propos. <small>Sous-titre.</small></h1>
+                <h1 class="page-header">À propos.</h1>
 
 
                 <ol class="breadcrumb">
@@ -28,21 +28,21 @@
 
 
         <div class="row">
-            <div class="col-md-6"><img alt="" class="img-responsive" src="http://placehold.it/750x450">
+            <div class="col-md-6"><img alt="" class="img-responsive" src="img/projet.png">
             </div>
 
 
             <div class="col-md-6">
-                <h2>À propos.</h2>
+                <h2>Projet Web L3</h2>
 
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+                <p>Le projet de programmation web de cette année nous est proposé par M. Julien David, enseignant et chercheur à l'université Paris 13.</p>
 
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+                <p>Le sujet consiste à créer un site web permettant de trouver des informations relatives à des séries, des acteurs, réalisateurs, producteurs, etc... (Un peu à la façon de Allocine)</p>
 
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                <p>Ce projet nous permet d'utiliser la Base de Donnée implémentée au semestre précédents et nous permet de mettre en pratique les langages vu ce semestre comme l'HTML, le CSS, le PHP, le JavaScript et l'AJAX</p>
             </div>
         </div>
         <!-- /.row -->
@@ -55,7 +55,71 @@
             </div>
 
 
-            <div class="col-md-4 text-center">
+            <div class="col-md-6 text-center">
+                <div class="thumbnail">
+                    <img alt="" class="img-responsive" src="http://placehold.it/750x450">
+
+                    <div class="caption">
+                        <h3>Sénoussaoui Théo.<br>
+                        <small>Rôle équipe.</small></h3>
+
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+
+
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            </li>
+
+
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                            </li>
+
+
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 text-center">
+                <div class="thumbnail">
+                    <img alt="" class="img-responsive" src="http://placehold.it/750x450">
+
+                    <div class="caption">
+                        <h3>Demonceaux Corentin.<br>
+                        <small>Rôle équipe.</small></h3>
+
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+
+
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            </li>
+
+
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                            </li>
+
+
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+           <!-- <div class="col-md-4 text-center">
                 <div class="thumbnail">
                     <img alt="" class="img-responsive" src="http://placehold.it/750x450">
 
@@ -84,71 +148,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img alt="" class="img-responsive" src="http://placehold.it/750x450">
-
-                    <div class="caption">
-                        <h3>Nom + prénom.<br>
-                        <small>Rôle équipe.</small></h3>
-
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img alt="" class="img-responsive" src="http://placehold.it/750x450">
-
-                    <div class="caption">
-                        <h3>Nom + prénom.<br>
-                        <small>Rôle équipe.</small></h3>
-
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            </div>-->
         </div>
         <!-- /.row -->
 

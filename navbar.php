@@ -31,6 +31,7 @@
 		else
 		{
 			echo'
+				<span id="nomUser">Connecté en tant que '.$_SESSION['login'].'</span>
 					<ul class="nav navbar-nav navbar-right">
 					  <li class="dropdown">
 						<p class="btn btn-info dropdown-toggle navbar-btn" data-toggle="dropdown">Profil ! <span class="caret"></span></p>
