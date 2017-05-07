@@ -55,7 +55,20 @@
                             <label>Confirmez votre mot de passe :</label> <input class="form-control" data-validation-required-message="Veuillez confirmer votre mot de passe." name="mdp2" required="" type="password">
                         </div>
                     </div>
+                    
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <div class="radio">
+                                <label><input type="radio" name="homme"> Vous êtes un homme.</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="femme"> Vous êtes une femme.</label>
+                            </div>
+                        </div>
+                    </div>
+
                     <button class="btn btn-primary" type="submit" >Inscription</button>
+
                 </form>
             </div>
         </div>
