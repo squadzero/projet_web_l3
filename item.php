@@ -162,15 +162,22 @@
 
 
                 <div class="well">
-                    <div class="text-right">
-                        <a class="btn btn-success">Laissez un avis.</a>
+                <form id="critique" name="critique" novalidate="">
+                	<div class="control-group form-group">
+                        <div class="controls">
+                            <label>Critique :</label> 
+
+                            <textarea class="form-control" cols="100" data-validation-required-message="Entrez votre critique." id="message" maxlength="999" required="" rows="10" style="resize:none"></textarea>
+                        </div>
                     </div>
+                    <button class="btn btn-success" type="submit">Laissez votre avis.</button>
+                </form>
 
                     <hr>
 
 
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-9">
                             <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -181,7 +188,7 @@
 
 
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-9">
                             <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -192,7 +199,7 @@
 
 
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-9">
                             <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
