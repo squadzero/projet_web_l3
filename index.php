@@ -2,6 +2,19 @@
 <?php include('header.php');?>
 <?php include('navbar.php');?>
 
+<?php
+
+	try
+	{
+		$req = $db->prepare("SELECT URL, titre_serie FROM series NATURAL JOIN photo_serie NATURAL JOIN episodes GROUP BY titre_serie, URL ORDER BY DATE_EP DESC limit 5 ");
+		$req->execute();
+		$res = $req->fetch(PDO::FETCH_ASSOC);
+	}
+	catch(PDOException $e)
+	{
+		die( 'Erreur : ' . $e->getMessage());
+	}
+	echo'
     <!-- Page Content -->
 
 
@@ -14,19 +27,28 @@
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
                     </ol>
 
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
+                    <div class="carousel-inner">'; 
+						echo'
+						<div class="item active">
+							<span>'.$res['titre_serie'].'</span>
+							<img class="img-responsive" src="'.$res['URL'].'" alt="">
+						</div>';
+						$res = $req->fetch(PDO::FETCH_ASSOC);
+						do
+						{
+							echo'
+							<div class="item">
+								<span>'.$res['titre_serie'].'</span>
+								<img class="img-responsive" src="'.$res['URL'].'" alt="">
+							</div>';
+						}
+						while($res = $req->fetch(PDO::FETCH_ASSOC));
+					echo'
                     </div>
 
                     <!-- Controls -->
@@ -128,4 +150,6 @@
     <script src="js/scripts.js"></script>
 
 </body>
-</html>
+</html>';
+
+?>

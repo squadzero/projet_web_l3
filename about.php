@@ -60,7 +60,7 @@
                     <img alt="" class="img-responsive" src="http://placehold.it/750x450">
 
                     <div class="caption">
-                        <h3>Sénoussaoui Théo.<br>
+                        <h3>Senoussaoui Théo.<br>
                         <small>Rôle équipe.</small></h3>
 
 

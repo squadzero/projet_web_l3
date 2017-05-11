@@ -65,6 +65,13 @@
 			$req8->execute();
 			$res8 = $req8->fetch(PDO::FETCH_ASSOC);
 			
+			$req9 = $db->prepare("SELECT COUNT(*) as NB_COM FROM noter_episodes WHERE ID_EP=:idEp;");
+			$req9->bindValue(':idEp', $_GET['idEp']);
+			
+			$req9->execute();
+			$res9 = $req9->fetch(PDO::FETCH_ASSOC);
+			
+			
 		}
 		catch(PDOException $e)
 		{
@@ -140,10 +147,12 @@
                     </div>
 
 
-                    <div class="ratings">
-                        <p class="pull-right">3 avis.</p>
-
-
+                    <div class="ratings">';
+                        if($res9['NB_COM'] != 0)
+							echo'<p class="pull-right">'.$res9['NB_COM'].' avis.</p>';
+						else
+							echo'<p></p>';
+						echo'
                         <p><span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars(round($res8['AVG_NOTE'], 1) ).' étoiles.</p>
                     </div>
                 </div>
@@ -170,6 +179,17 @@
 						}while($res7 = $req7->fetch(PDO::FETCH_ASSOC));
 					}
 					echo'
+					
+					 <form id="critique" name="critique" novalidate="">
+                	<div class="control-group form-group">
+                        <div class="controls">
+                            <label>Critique :</label> 
+
+                            <textarea class="form-control" cols="100" data-validation-required-message="Entrez votre critique." id="message" maxlength="999" required="" rows="10" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="submit">Laissez votre avis.</button>
+					</form>
                 </div>
             </div>
         </div>
