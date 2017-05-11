@@ -1,8 +1,8 @@
 <?php
 	// Ligne a changer pour se connecter a marseille
-	define('DB_HOST','db681360813.db.1and1.com'); 
-	define('DB_NAME','db681360813'); 
-	define('DB_USER','dbo681360813'); 
+	define('DB_HOST','localhost'); 
+	define('DB_NAME','projetweb'); 
+	define('DB_USER','root'); 
 	define('DB_PASS','');
 	
 	global $db;
@@ -16,6 +16,6 @@
 	catch(PDOException $e)
 	{
 		echo 'DATABASE IS BROKEN MADAFAKA';
-		die('<p> Connexion échouée. Erreur['.$e->getCode().'] : '.$e->getMessage().'</p>');
+		die('<p> Connexion échoué. Erreur['.$e->getCode().'] : '.$e->getMessage().'</p>');
 	}
 ?>
