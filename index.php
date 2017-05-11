@@ -35,20 +35,16 @@
                     <div class="carousel-inner">'; 
 						echo'
 						<div class="item active">
+							<span>'.$res['titre_serie'].'</span>
 							<img class="img-responsive" src="'.$res['URL'].'" alt="">
-					        <div class="carousel-caption">
-                                <h2>'.$res['titre_serie'].'</h2>
-                            </div>
-                        </div>';
+						</div>';
 						$res = $req->fetch(PDO::FETCH_ASSOC);
 						do
 						{
 							echo'
 							<div class="item">
+								<span>'.$res['titre_serie'].'</span>
 								<img class="img-responsive" src="'.$res['URL'].'" alt="">
-                                <div class="carousel-caption">
-                                    <h2>'.$res['titre_serie'].'</h2>
-                                </div>
 							</div>';
 						}
 						while($res = $req->fetch(PDO::FETCH_ASSOC));
