@@ -61,6 +61,17 @@
 			$req8->execute();
 			$res8 = $req8->fetch(PDO::FETCH_ASSOC);
 			
+			$req9 = $db->prepare("SELECT PSEUDO, ID_SERIE, NOTE_NS, CMT_NS, DATE_NS FROM noter_series WHERE ID_SERIE=:idSerie;");
+			$req9->bindValue(':idSerie', $res['ID_SERIE']);
+			
+			$req9->execute();
+			$res9 = $req9->fetch(PDO::FETCH_ASSOC);
+			
+			$req10 = $db->prepare("SELECT AVG(NOTE_NS) as AVG_NOTE FROM noter_series WHERE ID_SERIE=:idSerie;");
+			$req10->bindValue(':idSerie', $res['ID_SERIE']);
+			
+			$req10->execute();
+			$res10 = $req10->fetch(PDO::FETCH_ASSOC);
 		}
 		catch(PDOException $e)
 		{
@@ -156,7 +167,7 @@
                         <p class="pull-right">3 avis.</p>
 
 
-                        <p><span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> 4 étoiles.</p>
+                        <p><span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars(round($res10['AVG_NOTE'] ,2) ).' étoiles.</p>
                     </div>
                 </div>
 
@@ -164,40 +175,25 @@
                 <div class="well">
                     <div class="text-right">
                         <a class="btn btn-success">Laissez un avis.</a>
-                    </div>
+                    </div>';
+					
+					if(!empty($res9))
+					{
+						do
+						{
+							echo'
+							<hr>
 
-                    <hr>
+							<div class="row">
+								<div class="col-md-12">
+									<span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars($res9['PSEUDO']).' <span class="pull-right">Le '.htmlspecialchars($res9['DATE_NS']).'.</span>
 
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-
-                    <hr>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-
-                    <hr>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
+									<p>'.htmlspecialchars($res9['CMT_NS']).'.</p>
+								</div>
+							</div>';
+						}while($res9 = $req9->fetch(PDO::FETCH_ASSOC));
+					}
+					echo'
                 </div>
             </div>
         </div>
