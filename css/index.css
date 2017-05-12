@@ -508,7 +508,7 @@ abbr[title] {
   }
     .col-md-3 {
     width: 25%;
-    	float: left;
+      float: left;
   }
   .col-md-6 {
     width: 50%;
@@ -1016,7 +1016,7 @@ a.btn.disabled {
   z-index: 2;
   float: left;
   width: 100%;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .input-group .form-control:focus {
@@ -1949,7 +1949,7 @@ dt{
     
 .panel-footer{
     width:100%;
-  	min-height:40px;
+    min-height:40px;
   }
 
 #post-topic{
@@ -1968,17 +1968,25 @@ i.glyphicon-comment{
 /* POUR LE NOM QUAND ON EST CO */
 #nomUser
 {
-	margin-left:2%;
-	color:#9d9d9d;
+  margin-left:2%;
+  color:#9d9d9d;
 }
 
 #image_indi
 {
-	height:700px;
-	width:500px;
+  height:700px;
+  width:500px;
 }
 
 .img-responsive
 {
   width:1300px;
+}
+
+#message {
+  display : none;
+}
+
+#nomSerie #genreSerie #createurSerie #dateSerie {
+  margin-bottom: 10px;
 }
