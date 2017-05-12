@@ -1,4 +1,3 @@
-
 <?php include('header.php');?>
 <?php include('navbar.php');?>
 
@@ -38,33 +37,18 @@
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
 								<div class="dropdown-menu dropdown-menu-right" role="menu">
 									<form class="form-horizontal" role="form">
-									  <div class="form-group">
-										<label for="filter">Filtrer par :</label>
-										<select class="form-control">
-											<option value="0" selected>Critère 1.</option>
-											<option value="1">Critère 2.</option>
-											<option value="2">Critère 3.</option>
-											<option value="3">Critère 4.</option>
-											<option value="4">Critère 5.</option>
-										</select>
-									  </div>
 									<div class="form-group">
-										<label for="contain">Nom de la critique : </label>
-										<input class="form-control" type="text" />
+										<input type="text" class="form-control" id="nomSerie" placeholder="Nom de la série">
 									</div>
 									<div class="form-group">
-										<label for="contain">Nom du film : </label>
-										<input class="form-control" type="text" />
+										<input type="text" class="form-control" id="genreSerie" placeholder="Genre de la série">
 									</div>
 									  <div class="form-group">
-										<label for="contain">Auteur : </label>
-										<input class="form-control" type="text" />
+										<input type="text" class="form-control" id="createurSerie" placeholder="Créateur de la série">
 									  </div>
-									  <div class="form-group">
-										<label for="contain">Contient les mots : </label>
-										<input class="form-control" type="text" />
-									  </div>
-									  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+									<div class="form-group">
+										<input type="text" class="form-control" id="dateSerie" placeholder="Date de création de la série">
+									</div>
 									</form>
 								</div>
 							</div>
@@ -75,8 +59,6 @@
 			  </div>
 			</div>	
 				<div class="col-md-12">
-
-			
 					<div class="row">';
 					do
 					{
