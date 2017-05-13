@@ -194,7 +194,7 @@
                 </div>
 
 
-                <div class="well"> ';
+                <div class="well">';
 					if(!empty($res7))
 					{
 						do
@@ -241,7 +241,7 @@
 						}while($res7 = $req7->fetch(PDO::FETCH_ASSOC));
 					}
 					echo'
-					
+
 					 <form id="critique" name="critique" method="post" action="ajoutCommentaireEpi.php">
 	                	<div class="control-group">
 	                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
@@ -251,6 +251,7 @@
 	                            <hr>
 								<input type="hidden" name="idEp" value="'.$_GET['idEp'].'">	
 								<input type="hidden" id="noteHidden" name="note" value="">
+
 								<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
