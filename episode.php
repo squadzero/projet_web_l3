@@ -152,9 +152,45 @@
 							echo'<p class="pull-right">'.$res9['NB_COM'].' avis.</p>';
 						else
 							echo'<p></p>';
-						echo'
-                        <p><span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars(round($res8['AVG_NOTE'], 1) ).' étoiles.</p>
-                    </div>
+						
+                        $noteRonde = round($res8['AVG_NOTE']);
+						
+						if( $noteRonde==1 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res8['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==2 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res8['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==3 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res8['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==4 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res8['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==5 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span>'.htmlspecialchars(round($res8['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						echo'</div>
                 </div>
 
 
@@ -167,9 +203,38 @@
 							<hr>
 
 							<div class="row">
-								<div class="col-md-12">
-									<span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars($res7['PSEUDO']).' <span class="pull-right">Le '.htmlspecialchars($res7['DATE_NE']).'.</span>
-
+								<div class="col-md-12">';
+								if( $res7['NOTE_NE']==1 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res7['NOTE_NE']==2 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res7['NOTE_NE']==3 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res7['NOTE_NE']==4 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res7['NOTE_NE']==5 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>';
+								echo''.htmlspecialchars($res7['PSEUDO']).' <span class="pull-right">Le '.htmlspecialchars($res7['DATE_NE']).'.</span>
 									<p>'.htmlspecialchars($res7['CMT_NE']).'.</p>
 								</div>
 							</div>';
@@ -184,49 +249,29 @@
 	                        <div class="controls" id="message">
 	                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
 	                            <hr>
-								<input type="hidden" name="idSerie" value="'.$_GET['idEp'].'">
+								<input type="hidden" name="idEp" value="'.$_GET['idEp'].'">	
+								<input type="hidden" id="noteHidden" name="note" value="">
 								<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
 			                        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
 			                          	<li>
-			                            	<a data-value="1" href="#">1</a>
+			                            	<a data-value="1" >1</a>
 			                         	 </li>
 				                        <li>
-			    	                        <a data-value="2" href="#">2</a>
+			    	                        <a data-value="2" >2</a>
 			                            </li>
 			                            <li>
-			  		                        <a data-value="3" href="#">3</a>
+			  		                        <a data-value="3" >3</a>
 			        	                </li>
 			                            <li>
-			  		                        <a data-value="4" href="#">4</a>
+			  		                        <a data-value="4" >4</a>
 			                            </li>
 				                        <li>
-			    	                        <a data-value="5" href="#">5</a>
+			    	                        <a data-value="5" >5</a>
 			        	                </li>
                         			</ul>
 
-                      			</div>
-                    			<div class="dropdown">
-                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Choisissez la saison... <span class="caret"></span></button>
-
-			                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
-			                          	<li>
-			                            	<a data-value="1" href="#">1</a>
-			                         	 </li>
-				                        <li>
-			    	                        <a data-value="2" href="#">2</a>
-			                            </li>
-			                            <li>
-			  		                        <a data-value="3" href="#">3</a>
-			        	                </li>
-			                            <li>
-			  		                        <a data-value="4" href="#">4</a>
-			                            </li>
-				                        <li>
-			    	                        <a data-value="5" href="#">5</a>
-			        	                </li>
-                        			</ul>
                       			</div>
                       			<button class="btn btn-primary" type="submit">Envoyer message !</button>
 	                        </div>
@@ -239,6 +284,7 @@
     <!-- /.container -->
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/test.js"></script>
 
 </body>
 </html>

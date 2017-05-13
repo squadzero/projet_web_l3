@@ -164,10 +164,11 @@
                     </div>
 
 
-                    <div class="ratings">
-						';
-						if($res10)
+                    <div class="ratings">';
+						if($res10['NB_COM'] != 0)
 							echo'<p class="pull-right">'.$res10['NB_COM'].' avis.</p>';
+						else
+							echo'<p></p>';
 						
 						$noteRonde = round($res10['AVG_NOTE']);
 						
@@ -268,6 +269,7 @@
 	                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
 	                            <hr>
 								<input type="hidden" name="idSerie" value="'.$_GET['idSerie'].'">
+								<input type="hidden" id="noteHidden" name="note" value="">
 								<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
@@ -289,27 +291,6 @@
 			        	                </li>
                         			</ul>
 
-                      			</div>
-                    			<div class="dropdown">
-                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Choisissez la saison... <span class="caret"></span></button>
-
-			                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
-			                          	<li>
-			                            	<a data-value="1" href="#">1</a>
-			                         	 </li>
-				                        <li>
-			    	                        <a data-value="2" href="#">2</a>
-			                            </li>
-			                            <li>
-			  		                        <a data-value="3" href="#">3</a>
-			        	                </li>
-			                            <li>
-			  		                        <a data-value="4" href="#">4</a>
-			                            </li>
-				                        <li>
-			    	                        <a data-value="5" href="#">5</a>
-			        	                </li>
-                        			</ul>
                       			</div>
                       			<button class="btn btn-primary" type="submit">Envoyer message !</button>
 	                        </div>
