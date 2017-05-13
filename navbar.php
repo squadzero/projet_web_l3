@@ -42,12 +42,6 @@
 							<a href="preferences.php">Profil.</a>
 						  </li>
 
-
-						  <li>
-							<a href="critiques.php">Voir mes critiques.</a>
-						  </li>
-
-
 						  <li>
 							<a href="deconnexion.php">Déconnexion.</a>
 						  </li>

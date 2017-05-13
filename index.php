@@ -35,6 +35,7 @@
                     <div class="carousel-inner">'; 
 						echo'
 						<div class="item active">
+
 							<img class="img-responsive" src="'.$res['URL'].'" alt="">
 					        <div class="carousel-caption">
                                 <h2>'.$res['titre_serie'].'</h2>
