@@ -175,11 +175,7 @@
                 </div>
 
 
-                <div class="well">
-                    <div class="text-right">
-                        <a class="btn btn-success">Laissez un avis.</a>
-                    </div>';
-					
+                <div class="well">';
 					if(!empty($res9))
 					{
 						do
@@ -188,15 +184,16 @@
 							<hr>
 
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-md-9">
 									<span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars($res9['PSEUDO']).' <span class="pull-right">Le '.htmlspecialchars($res9['DATE_NS']).'.</span>
 
 									<p>'.htmlspecialchars($res9['CMT_NS']).'.</p>
 								</div>
 							</div>';
-						}while($res9 = $req9->fetch(PDO::FETCH_ASSOC));
+						} while($res9 = $req9->fetch(PDO::FETCH_ASSOC));
 					}
-					echo'
+					/*echo'
+
 
 					<form id="critique" name="critique" novalidate="">
 						<div class="control-group form-group">
@@ -208,11 +205,24 @@
 						</div>
 						<button class="btn btn-success" type="submit">Laissez votre avis.</button>
 					</form>
+*/
+echo'
+	                <form id="critique" name="critique">
+	                	<div class="control-group">
+	                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
+	                	 	<br>
+	                        <div class="controls" id="message">
+	                            <textarea class="form-control" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
+	                            <hr>
+                    			<button class="btn btn-primary" type="submit">Envoyer message !</button>
+	                        </div>
+	                    </div>
+	                </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /.container -->
+
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
 
