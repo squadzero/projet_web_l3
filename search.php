@@ -28,38 +28,21 @@
 
 		<br>
 		<div class="row">
-		<div class="col-md-12">
-				<div class="input-group" id="adv-search">
-					<input type="text" class="form-control" placeholder="Tapez des mots clés." />
-					<div class="input-group-btn">
-						<div class="btn-group" role="group">
-							<div class="dropdown dropdown-lg">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-								<div class="dropdown-menu dropdown-menu-right" role="menu">
-									<form class="form-horizontal" role="form">
-									<div class="form-group">
-										<input type="text" class="form-control" id="nomSerie" placeholder="Nom de la série">
-									</div>
-									<div class="form-group">
-										<input type="text" class="form-control" id="genreSerie" placeholder="Genre de la série">
-									</div>
-									  <div class="form-group">
-										<input type="text" class="form-control" id="createurSerie" placeholder="Créateur de la série">
-									  </div>
-									<div class="form-group">
-										<input type="text" class="form-control" id="dateSerie" placeholder="Date de création de la série">
-									</div>
-									</form>
-								</div>
+			<div class="col-md-12">
+				<form action="results.php" id="searchForm" method="post" name="searchForm">
+					<div class="input-group" id="adv-search">
+						<input type="text" class="form-control" placeholder="Tapez le nom, la date ou le réalisateur..." name ="search"/>
+						<div class="input-group-btn">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 							</div>
-							<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 						</div>
 					</div>
-				</div>
-			  </div>
-			</div>	
-				<div class="col-md-12">
-					<div class="row">';
+				</form>
+			</div>
+		</div>	
+			<div class="col-md-12">
+				<div class="row">';
 					do
 					{
 						$req2 = $db->prepare("SELECT URL FROM photo_serie WHERE ID_SERIE=:idSerie;");
@@ -70,7 +53,7 @@
 						
 						echo'
 						
-							<div class="col-sm-4 col-lg-4 col-md-4">
+							<div class="col-md-4">
 								<div class="thumbnail">
 									<a href="item.php?idSerie='.htmlspecialchars($res['ID_SERIE']).'"><img src="'.htmlspecialchars($res2['URL']).'" alt=""></a>
 									<div class="caption">
@@ -91,8 +74,8 @@
 							</div>
 						';
 						
-					}while( $res = $req->fetch(PDO::FETCH_ASSOC) );
-					
+					} while ($res = $req->fetch(PDO::FETCH_ASSOC) );
+
 					echo'
 
 					</div>
