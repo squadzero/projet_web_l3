@@ -41,7 +41,11 @@
 						  <li>
 							<a href="preferences.php">Profil.</a>
 						  </li>
-
+						  
+                          <li>
+							<a href="forumpost.php">Forum.</a>
+						  </li>
+						  
 						  <li>
 							<a href="deconnexion.php">Déconnexion.</a>
 						  </li>

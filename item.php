@@ -181,7 +181,6 @@
 						do
 						{
 							echo'
-							<hr>
 
 							<div class="row">
 								<div class="col-md-9">
@@ -189,31 +188,20 @@
 
 									<p>'.htmlspecialchars($res9['CMT_NS']).'.</p>
 								</div>
-							</div>';
+							</div>
+							<hr>';
 						} while($res9 = $req9->fetch(PDO::FETCH_ASSOC));
 					}
-					/*echo'
 
-
-					<form id="critique" name="critique" novalidate="">
-						<div class="control-group form-group">
-							<div class="controls">
-								<label>Critique :</label> 
-
-								<textarea class="form-control" cols="100" data-validation-required-message="Entrez votre critique." id="message" maxlength="999" required="" rows="10" style="resize:none"></textarea>
-							</div>
-						</div>
-						<button class="btn btn-success" type="submit">Laissez votre avis.</button>
-					</form>
-*/
-echo'
-	                <form id="critique" name="critique">
+					echo'
+	                <form id="critique" name="critique" method="post" action="ajoutCommentaireSerie.php">
 	                	<div class="control-group">
 	                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
 	                	 	<br>
 	                        <div class="controls" id="message">
-	                            <textarea class="form-control" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
+	                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
 	                            <hr>
+								<input type="hidden" name="idSerie" value="'.$_GET['idSerie'].'">
 								<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
@@ -234,28 +222,7 @@ echo'
 			    	                        <a data-value="5" href="#">5</a>
 			        	                </li>
                         			</ul>
-                      			</div>
-                    			<div class="dropdown">
-                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Choisissez la saison... <span class="caret"></span></button>
-
-			                        <ul class="dropdown-menu">
-			                          	<li>
-			                            	<a data-value="1" href="#">1</a>
-			                         	 </li>
-				                        <li>
-			    	                        <a data-value="2" href="#">2</a>
-			                            </li>
-			                            <li>
-			  		                        <a data-value="3" href="#">3</a>
-			        	                </li>
-			                            <li>
-			  		                        <a data-value="4" href="#">4</a>
-			                            </li>
-				                        <li>
-			    	                        <a data-value="5" href="#">5</a>
-			        	                </li>
-                        			</ul>
-                      			</div>
+                      			</div>                    			
                       			<button class="btn btn-primary" type="submit">Envoyer message !</button>
 	                        </div>
 	                    </div>

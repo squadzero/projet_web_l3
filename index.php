@@ -9,6 +9,13 @@
 		$req = $db->prepare("SELECT URL, titre_serie FROM series NATURAL JOIN photo_serie NATURAL JOIN episodes GROUP BY titre_serie, URL ORDER BY DATE_EP DESC limit 5 ");
 		$req->execute();
 		$res = $req->fetch(PDO::FETCH_ASSOC);
+		
+		$datePlusUnAn = date('Y-m-d', strtotime('-1 year'));
+
+		$req2 = $db->prepare("SELECT PSEUDO, DATE_INSC FROM utilisateurs WHERE DATE_INSC=:anneePlusUn");
+		$req2->bindValue(':anneePlusUn', $datePlusUnAn );
+		$req2->execute();
+		$res2 = $req2->fetch(PDO::FETCH_ASSOC);
 	}
 	catch(PDOException $e)
 	{
@@ -64,89 +71,53 @@
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
-             </div>
+             </div>';
+			if($res2)
+			{
+				echo'
+				<div class="col-md-4">
+				</div>
 
 
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i>Evénement récent.</h4>
-                    </div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4><i class="fa fa-fw fa-gift"></i>Nos félicitations à ...</h4>
+						</div>
+						<div class="panel-body">
+							<p>'.$res2['PSEUDO'].' qui fête aujourd\'hui ses un an de participation sur notre site.</p>
+							<p>Garde l\'esprit aussi critique pour l\'année qui vient !</p>
+						</div>
+					</div>
+				</div>
 
 
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, quo ei eirmod partiendo deterruisset. Odio omittam accusata ad sit, in semper disputando duo. Eu sit feugiat gubergren. Alterum pertinax ne est, at mel brute persius accusamus. Ne tollit dolore definitiones quo, vel justo nobis quidam eu. Ut usu case ullum, amet cibo mediocrem sed te.</p>
-                        <a class="btn btn-default" href="#">En savoir plus.</a>
-                    </div>
-                </div>
-            </div>
+				<div class="col-md-4">
+				</div>';
+			}
+			else
+			{
+				echo'
+				<div class="col-md-4">
+				</div>
 
 
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i>Notre boulot.</h4>
-                    </div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<p>Aucun utilisateur ne fète son annviersaire aujourd\'hui ... peut être demain ...</p>
+						</div>
+					</div>
+				</div>
 
 
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, quo ei eirmod partiendo deterruisset. Odio omittam accusata ad sit, in semper disputando duo. Eu sit feugiat gubergren. Alterum pertinax ne est, at mel brute persius accusamus. Ne tollit dolore definitiones quo, vel justo nobis quidam eu. Ut usu case ullum, amet cibo mediocrem sed te.</p>
-                        <a class="btn btn-default" href="#">En savoir plus.</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i>Qui sommes-nous ?</h4>
-                    </div>
-
-
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, quo ei eirmod partiendo deterruisset. Odio omittam accusata ad sit, in semper disputando duo. Eu sit feugiat gubergren. Alterum pertinax ne est, at mel brute persius accusamus. Ne tollit dolore definitiones quo, vel justo nobis quidam eu. Ut usu case ullum, amet cibo mediocrem sed te.</p>
-                        <a class="btn btn-default" href="#">En savoir plus.</a>
-                    </div>
-                </div>
-            </div>
+				<div class="col-md-4">
+				</div>';			
+			}
+		echo'
         </div>
         <!-- /.row -->
         <!-- Features Section -->
-
-
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Nos applications.</h2>
-            </div>
-
-
-            <div class="col-md-6">
-                <p>Nos applications incluent :</p>
-
-
-                <ul>
-                    <li><strong>Lorem ipsum.</strong>
-                    </li>
-
-
-                    <li>Lorem ipsum.</li>
-
-
-                    <li>Lorem ipsum.</li>
-
-
-                    <li>Lorem ipsum.</li>
-
-
-                    <li>Lorem ipsum.</li>
-
-
-                    <li>Lorem ipsum.</li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
 
         <hr>
     </div>
