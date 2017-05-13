@@ -1985,6 +1985,7 @@ i.glyphicon-comment{
 
 #message {
   display : none;
+  margin-top: 20px;
 }
 
 #nomSerie #genreSerie #createurSerie #dateSerie {
