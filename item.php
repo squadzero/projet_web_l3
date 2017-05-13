@@ -126,7 +126,7 @@
 								echo ', <a href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'">'.htmlspecialchars($res6['PREN_IND']).' '.htmlspecialchars($res6['NOM_IND']).'</a>';
 							}while( $res5 = $req5->fetch(PDO::FETCH_ASSOC) );
 							
-							echo '</p>';	
+							echo '</p>';
 						}
 						
 						if($res8)
@@ -198,17 +198,16 @@
 					}
 					echo'
 
-                <form id="critique" name="critique" novalidate="">
-                	<div class="control-group form-group">
-                        <div class="controls">
-                            <label>Critique :</label> 
+					<form id="critique" name="critique" novalidate="">
+						<div class="control-group form-group">
+							<div class="controls">
+								<label>Critique :</label> 
 
-                            <textarea class="form-control" cols="100" data-validation-required-message="Entrez votre critique." id="message" maxlength="999" required="" rows="10" style="resize:none"></textarea>
-                        </div>
-                    </div>
-                    <button class="btn btn-success" type="submit">Laissez votre avis.</button>
-                </form>
-
+								<textarea class="form-control" cols="100" data-validation-required-message="Entrez votre critique." id="message" maxlength="999" required="" rows="10" style="resize:none"></textarea>
+							</div>
+						</div>
+						<button class="btn btn-success" type="submit">Laissez votre avis.</button>
+					</form>
                 </div>
             </div>
         </div>
