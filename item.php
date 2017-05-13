@@ -169,8 +169,44 @@
 						if($res10)
 							echo'<p class="pull-right">'.$res10['NB_COM'].' avis.</p>';
 						
+						$noteRonde = round($res10['AVG_NOTE']);
+						
+						if( $noteRonde==1 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res10['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==2 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res10['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==3 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res10['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==4 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span>'.htmlspecialchars(round($res10['AVG_NOTE'] ,2) ).' étoiles.</span>';
+						elseif( $noteRonde==5 )
+							echo'<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span> 
+							<span class="glyphicon glyphicon-star"></span>
+							<span>'.htmlspecialchars(round($res10['AVG_NOTE'] ,2) ).' étoiles.</span>';
 						echo'
-                        <p><span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars(round($res10['AVG_NOTE'] ,2) ).' étoiles.</p>
                     </div>
                 </div>
 
@@ -183,8 +219,38 @@
 							echo'
 
 							<div class="row">
-								<div class="col-md-9">
-									<span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> '.htmlspecialchars($res9['PSEUDO']).' <span class="pull-right">Le '.htmlspecialchars($res9['DATE_NS']).'.</span>
+								<div class="col-md-9">';
+								if( $res9['NOTE_NS']==1 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res9['NOTE_NS']==2 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res9['NOTE_NS']==3 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star-empty"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res9['NOTE_NS']==4 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star-empty"></span>';
+								elseif( $res9['NOTE_NS']==5 )
+									echo'<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>
+									<span class="glyphicon glyphicon-star"></span> 
+									<span class="glyphicon glyphicon-star"></span>';
+								echo''.htmlspecialchars($res9['PSEUDO']).' <span class="pull-right">Le '.htmlspecialchars($res9['DATE_NS']).'.</span>
 
 									<p>'.htmlspecialchars($res9['CMT_NS']).'.</p>
 								</div>
@@ -205,7 +271,29 @@
 								<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
-			                        <ul class="dropdown-menu">
+			                        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+			                          	<li>
+			                            	<a data-value="1" >1</a>
+			                         	 </li>
+				                        <li>
+			    	                        <a data-value="2" >2</a>
+			                            </li>
+			                            <li>
+			  		                        <a data-value="3" >3</a>
+			        	                </li>
+			                            <li>
+			  		                        <a data-value="4" >4</a>
+			                            </li>
+				                        <li>
+			    	                        <a data-value="5" >5</a>
+			        	                </li>
+                        			</ul>
+
+                      			</div>
+                    			<div class="dropdown">
+                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Choisissez la saison... <span class="caret"></span></button>
+
+			                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
 			                          	<li>
 			                            	<a data-value="1" href="#">1</a>
 			                         	 </li>
@@ -222,7 +310,7 @@
 			    	                        <a data-value="5" href="#">5</a>
 			        	                </li>
                         			</ul>
-                      			</div>                    			
+                      			</div>
                       			<button class="btn btn-primary" type="submit">Envoyer message !</button>
 	                        </div>
 	                    </div>
@@ -234,6 +322,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/test.js"></script>
 
 </body>
 </html>

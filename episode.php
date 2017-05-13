@@ -158,10 +158,7 @@
                 </div>
 
 
-                <div class="well">
-                    <div class="text-right">
-                        <a class="btn btn-success">Laissez un avis.</a>
-                    </div>';
+                <div class="well"> ';
 					if(!empty($res7))
 					{
 						do
@@ -180,16 +177,61 @@
 					}
 					echo'
 					
-					 <form id="critique" name="critique" novalidate="">
-                	<div class="control-group form-group">
-                        <div class="controls">
-                            <label>Critique :</label> 
+					 <form id="critique" name="critique" method="post" action="ajoutCommentaireEpi.php">
+	                	<div class="control-group">
+	                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
+	                	 	<br>
+	                        <div class="controls" id="message">
+	                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
+	                            <hr>
+								<input type="hidden" name="idSerie" value="'.$_GET['idEp'].'">
+								<div class="dropdown">
+                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
-                            <textarea class="form-control" cols="100" data-validation-required-message="Entrez votre critique." id="message" maxlength="999" required="" rows="10" style="resize:none"></textarea>
-                        </div>
-                    </div>
-                    <button class="btn btn-success" type="submit">Laissez votre avis.</button>
-					</form>
+			                        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+			                          	<li>
+			                            	<a data-value="1" href="#">1</a>
+			                         	 </li>
+				                        <li>
+			    	                        <a data-value="2" href="#">2</a>
+			                            </li>
+			                            <li>
+			  		                        <a data-value="3" href="#">3</a>
+			        	                </li>
+			                            <li>
+			  		                        <a data-value="4" href="#">4</a>
+			                            </li>
+				                        <li>
+			    	                        <a data-value="5" href="#">5</a>
+			        	                </li>
+                        			</ul>
+
+                      			</div>
+                    			<div class="dropdown">
+                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Choisissez la saison... <span class="caret"></span></button>
+
+			                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
+			                          	<li>
+			                            	<a data-value="1" href="#">1</a>
+			                         	 </li>
+				                        <li>
+			    	                        <a data-value="2" href="#">2</a>
+			                            </li>
+			                            <li>
+			  		                        <a data-value="3" href="#">3</a>
+			        	                </li>
+			                            <li>
+			  		                        <a data-value="4" href="#">4</a>
+			                            </li>
+				                        <li>
+			    	                        <a data-value="5" href="#">5</a>
+			        	                </li>
+                        			</ul>
+                      			</div>
+                      			<button class="btn btn-primary" type="submit">Envoyer message !</button>
+	                        </div>
+	                    </div>
+	                </form>
                 </div>
             </div>
         </div>
