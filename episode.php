@@ -176,14 +176,15 @@
 						}while($res7 = $req7->fetch(PDO::FETCH_ASSOC));
 					}
 					echo'
-					
-					<form id="critique" name="critique">
+
+					 <form id="critique" name="critique" method="post" action="ajoutCommentaireEpi.php">
 	                	<div class="control-group">
 	                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
 	                	 	<br>
 	                        <div class="controls" id="message">
-	                            <textarea class="form-control" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
+	                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
 	                            <hr>
+
 								<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
@@ -204,8 +205,30 @@
 			    	                        <a data-value="5" href="#">5</a>
 			        	                </li>
                         			</ul>
+
                       			</div>
-                    			<button class="btn btn-primary" type="submit">Envoyer message !</button>
+                    			<div class="dropdown">
+                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Choisissez la saison... <span class="caret"></span></button>
+
+			                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
+			                          	<li>
+			                            	<a data-value="1" href="#">1</a>
+			                         	 </li>
+				                        <li>
+			    	                        <a data-value="2" href="#">2</a>
+			                            </li>
+			                            <li>
+			  		                        <a data-value="3" href="#">3</a>
+			        	                </li>
+			                            <li>
+			  		                        <a data-value="4" href="#">4</a>
+			                            </li>
+				                        <li>
+			    	                        <a data-value="5" href="#">5</a>
+			        	                </li>
+                        			</ul>
+                      			</div>
+                      			<button class="btn btn-primary" type="submit">Envoyer message !</button>
 	                        </div>
 	                    </div>
 	                </form>
