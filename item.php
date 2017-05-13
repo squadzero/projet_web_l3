@@ -204,7 +204,7 @@
 								<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
-			                        <ul class="dropdown-menu">
+			                        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
 			                          	<li>
 			                            	<a data-value="1" href="#">1</a>
 			                         	 </li>
@@ -225,7 +225,7 @@
                     			<div class="dropdown">
                         			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Choisissez la saison... <span class="caret"></span></button>
 
-			                        <ul class="dropdown-menu">
+			                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
 			                          	<li>
 			                            	<a data-value="1" href="#">1</a>
 			                         	 </li>
@@ -254,6 +254,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/test.js"></script>
 
 </body>
 </html>
