@@ -20,8 +20,6 @@
 			$req2->execute();
 			$res2 = $req2->fetch(PDO::FETCH_ASSOC);
 			
-			// $mois = array( 01 => 'janvier', 02 => 'février', 03 => 'mars', 04 => 'avril', 05 => 'mai', 06 => 'juin', 07 => 'juillet', 08 => 'aout', 09 => 'septembre', 10 => 'octobre', 11 => 'novembre', 12 => 'décembre');
-			
 			$dateFormatSQL = $res['DATE_EP'];
 			$date = date("d-m-Y", strtotime($dateFormatSQL));
 			
@@ -112,12 +110,18 @@
 							
 							do
 							{
-								$req4 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
-								$req4->bindValue(':idInd', $res3['ID_IND']);
-								
-								$req4->execute();
-								$res4 = $req4->fetch(PDO::FETCH_ASSOC);
-
+								try
+								{
+									$req4 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
+									$req4->bindValue(':idInd', $res3['ID_IND']);
+									
+									$req4->execute();
+									$res4 = $req4->fetch(PDO::FETCH_ASSOC);
+								}
+								catch(PDOException $e)
+								{
+									die( 'Erreur : ' . $e->getMessage());
+								}
 								echo ', <a href="acteurUni.php?idInd='.htmlspecialchars($res3['ID_IND']).'">'.htmlspecialchars($res4['PREN_IND']).' '.htmlspecialchars($res4['NOM_IND']).'</a>';
 							}while( $res3 = $req3->fetch(PDO::FETCH_ASSOC) );
 				
@@ -132,11 +136,17 @@
 							
 							do
 							{
-								$req6 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
-								$req6->bindValue(':idInd', $res5['ID_IND']);
-								
-								$req6->execute();
-								$res6 = $req6->fetch(PDO::FETCH_ASSOC);
+								try
+									$req6 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
+									$req6->bindValue(':idInd', $res5['ID_IND']);
+									
+									$req6->execute();
+									$res6 = $req6->fetch(PDO::FETCH_ASSOC);
+								}
+								catch(PDOException $e)
+								{
+									die( 'Erreur : ' . $e->getMessage());
+								}
 
 								echo ', <a href="acteur.php">'.htmlspecialchars($res6['PREN_IND']).' '.htmlspecialchars($res6['NOM_IND']).'</a>';
 							}while( $res5 = $req5->fetch(PDO::FETCH_ASSOC) );

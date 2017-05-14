@@ -59,29 +59,10 @@
                 <div class="thumbnail">
                     <img alt="" class="img-responsive" src="http://placehold.it/750x450">
 
-                    <div class="caption">
+                    <div class="caption-oui">
                         <h3>Senoussaoui Théo.<br>
                         <small>Rôle équipe.</small></h3>
 
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -91,64 +72,14 @@
                 <div class="thumbnail">
                     <img alt="" class="img-responsive" src="http://placehold.it/750x450">
 
-                    <div class="caption">
+                    <div class="caption-oui" >
                         <h3>Demonceaux Corentin.<br>
                         <small>Rôle équipe.</small></h3>
 
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
 
-
-           <!-- <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img alt="" class="img-responsive" src="http://placehold.it/750x450">
-
-                    <div class="caption">
-                        <h3>Nom + prénom.<br>
-                        <small>Rôle équipe.</small></h3>
-
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>-->
         </div>
         <!-- /.row -->
 

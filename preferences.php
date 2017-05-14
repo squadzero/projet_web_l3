@@ -6,11 +6,18 @@
 	<?php
 	if( isset($_SESSION['login']))
 	{
-		$req = $db->prepare('SELECT PSEUDO, PWD, SEXE, DATE_INSC FROM utilisateurs WHERE PSEUDO=:pseudo;');
-		$req->bindValue(':pseudo', $_SESSION['login']);
-		
-		$req->execute();
-		$res = $req->fetch(PDO::FETCH_ASSOC);
+		try
+		{
+			$req = $db->prepare('SELECT PSEUDO, PWD, SEXE, DATE_INSC FROM utilisateurs WHERE PSEUDO=:pseudo;');
+			$req->bindValue(':pseudo', $_SESSION['login']);
+			
+			$req->execute();
+			$res = $req->fetch(PDO::FETCH_ASSOC);
+		}
+		catch(PDOException $e)
+		{
+			die( 'Erreur : ' . $e->getMessage());
+		}
 		
 		$sexe;
 		if( $res['SEXE'] == 'M')

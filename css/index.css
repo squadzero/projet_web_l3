@@ -1841,6 +1841,10 @@ header.carousel .fill {
   height: 50px;
   overflow: hidden;
 }
+.caption-oui {
+  overflow: hidden;
+}
+
 .caption h4 {
   white-space: nowrap;
 }
@@ -1995,3 +1999,4 @@ i.glyphicon-comment{
 #nomSerie #genreSerie #createurSerie #dateSerie {
   margin-bottom: 10px;
 }
+

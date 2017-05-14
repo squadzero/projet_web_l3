@@ -62,12 +62,24 @@
 					<div class="row">';
 					do
 					{
-						$req2 = $db->prepare("SELECT URL FROM photo_serie WHERE ID_SERIE=:idSerie;");
-						$req2->bindValue(':idSerie', $res['ID_SERIE']);
-						
-						$req2->execute();
-						$res2 = $req2->fetch(PDO::FETCH_ASSOC);
-						
+						try
+						{
+							$req2 = $db->prepare("SELECT URL FROM photo_serie WHERE ID_SERIE=:idSerie;");
+							$req2->bindValue(':idSerie', $res['ID_SERIE']);
+							
+							$req2->execute();
+							$res2 = $req2->fetch(PDO::FETCH_ASSOC);
+							
+							$req3 = $db->prepare("SELECT AVG(NOTE_NS) as AVG_NOTE, COUNT(*) as NB_COM FROM noter_series WHERE ID_SERIE=:idSerie;");
+							$req3->bindValue(':idSerie', $res['ID_SERIE']);
+							
+							$req3->execute();
+							$res3 = $req3->fetch(PDO::FETCH_ASSOC);
+						}
+						catch(PDOException $e)
+						{
+							die( 'Erreur : ' . $e->getMessage());
+						}
 						echo'
 						
 							<div class="col-sm-4 col-lg-4 col-md-4">
@@ -77,15 +89,51 @@
 										<h4><a href="item.php?idSerie='.htmlspecialchars($res['ID_SERIE']).'">'.htmlspecialchars($res['TITRE_SERIE']).'</a>
 										</h4>
 									</div>
-									<div class="ratings">
-										<p class="pull-right">15 avis.</p>
-										<p>
-											<span class="glyphicon glyphicon-star"></span>
-											<span class="glyphicon glyphicon-star"></span>
-											<span class="glyphicon glyphicon-star"></span>
-											<span class="glyphicon glyphicon-star"></span>
-											<span class="glyphicon glyphicon-star"></span>
-										</p>
+									<div class="ratings">';
+										if($res3['NB_COM'] != 0)
+											echo'<p class="pull-right">'.$res3['NB_COM'].' avis.</p>';
+										else
+											echo'<p class="pull-right">Aucun avis.</p>';
+											
+											$noteRonde = round($res3['AVG_NOTE']);
+											
+											if($res3['NB_COM'] == 0)
+												echo'<span class="glyphicon glyphicon-star-empty"></span>
+												<span class="glyphicon glyphicon-star-empty"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>
+												<span class="glyphicon glyphicon-star-empty"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>';
+											elseif( $noteRonde==1 )
+												echo'<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star-empty"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>
+												<span class="glyphicon glyphicon-star-empty"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>';
+											elseif( $noteRonde==2 )
+												echo'<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>
+												<span class="glyphicon glyphicon-star-empty"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>';
+											elseif( $noteRonde==3 )
+												echo'<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star"></span> 
+												<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star-empty"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>';
+											elseif( $noteRonde==4 )
+												echo'<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star"></span> 
+												<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star"></span> 
+												<span class="glyphicon glyphicon-star-empty"></span>';
+											elseif( $noteRonde==5 )
+												echo'<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star"></span> 
+												<span class="glyphicon glyphicon-star"></span>
+												<span class="glyphicon glyphicon-star"></span> 
+												<span class="glyphicon glyphicon-star"></span>';
+										echo'
 									</div>
 								</div>
 							</div>

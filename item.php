@@ -117,12 +117,18 @@
 							
 							do
 							{
-								$req6 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
-								$req6->bindValue(':idInd', $res5['ID_IND']);
-									
-								$req6->execute();
-								$res6 = $req6->fetch(PDO::FETCH_ASSOC);
-									
+								try
+								{
+									$req6 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
+									$req6->bindValue(':idInd', $res5['ID_IND']);
+										
+									$req6->execute();
+									$res6 = $req6->fetch(PDO::FETCH_ASSOC);
+								}
+								catch(PDOException $e)
+								{
+									die( 'Erreur : ' . $e->getMessage());
+								}
 								echo ', <a href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'">'.htmlspecialchars($res6['PREN_IND']).' '.htmlspecialchars($res6['NOM_IND']).'</a>';
 							}while( $res5 = $req5->fetch(PDO::FETCH_ASSOC) );
 							
@@ -137,12 +143,18 @@
 							
 							do
 							{
-								$req8 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
-								$req8->bindValue(':idInd', $res7['ID_IND']);
-									
-								$req8->execute();
-								$res8 = $req8->fetch(PDO::FETCH_ASSOC);
-									
+								try
+								{
+									$req8 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
+									$req8->bindValue(':idInd', $res7['ID_IND']);
+										
+									$req8->execute();
+									$res8 = $req8->fetch(PDO::FETCH_ASSOC);
+								}
+								catch(PDOException $e)
+								{
+									die( 'Erreur : ' . $e->getMessage());
+								}
 								echo ', <a href="acteurUni.php?idInd='.htmlspecialchars($res7['ID_IND']).'">'.htmlspecialchars($res8['PREN_IND']).' '.htmlspecialchars($res8['NOM_IND']).'</a>';
 							}while( $res7 = $req7->fetch(PDO::FETCH_ASSOC) );
 							
