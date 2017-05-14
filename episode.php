@@ -137,6 +137,7 @@
 							do
 							{
 								try
+								{
 									$req6 = $db->prepare("SELECT NOM_IND, PREN_IND FROM individus WHERE ID_IND=:idInd;");
 									$req6->bindValue(':idInd', $res5['ID_IND']);
 									
