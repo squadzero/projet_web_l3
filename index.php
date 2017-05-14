@@ -27,7 +27,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="colonne-min2">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -75,11 +75,11 @@
 			if($res2)
 			{
 				echo'
-				<div class="col-md-4">
+				<div class="colonne-moy">
 				</div>
 
 
-				<div class="col-md-4">
+				<div class="colonne-moy">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4><i class="fa fa-fw fa-gift"></i>Nos félicitations à ...</h4>
@@ -92,17 +92,17 @@
 				</div>
 
 
-				<div class="col-md-4">
+				<div class="colonne-moy">
 				</div>';
 			}
 			else
 			{
 				echo'
-				<div class="col-md-4">
+				<div class="colonne-moy">
 				</div>
 
 
-				<div class="col-md-4">
+				<div class="colonne-moy">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<p>Aucun utilisateur ne fète son annviersaire aujourd\'hui ... peut être demain ...</p>
@@ -111,7 +111,7 @@
 				</div>
 
 
-				<div class="col-md-4">
+				<div class="colonne-moy">
 				</div>';			
 			}
 		echo'

@@ -24,11 +24,11 @@
 				{
 					echo'
 				  <section class="row clearfix">
-					<section class="col-md-12 column">
+					<section class="colonne-min2 column">
 					  <nav class="navbar navbar-default" role="navigation">
 						<div class="container-fluid">
 						  <div class="row clearfix">
-							<div class="col-md-12 column">
+							<div class="colonne-min2 column">
 							  <div class="panel panel-default">
 								<div class="panel-heading">
 								  <section class="panel-title">
@@ -51,7 +51,7 @@
 
 
 								<section class="row panel-body">
-								  <section class="col-md-9">
+								  <section class="colonne-max">
 									<h2>'.htmlspecialchars($res['TITRE_MSG']).'</h2>
 
 									<hr>
@@ -76,7 +76,7 @@
 								{
 									echo'
 									<section class="row panel-body">
-									  <section class="col-md-8 forumReponse">
+									  <section class="colonne-max forumReponse">
 										<p>'.htmlspecialchars($res3['PSEUDO']).', Le '.htmlspecialchars($res3['DATE_RPS']).'</p>
 										<p>'.htmlspecialchars($res3['TXT_RPS']).'</p>
 									  </section>
@@ -85,15 +85,15 @@
 								echo'
 								<div class="panel-footer">
 								  <div class="row">
-								<section class="col-md-9">
+								<section class="colonne-max">
 								  <form id="critique" name="critique" method="post" action="ajoutCommentaireSerie.php">
 				                	<div class="control-group">
-				                	 	<button class="btn btn-success" onclick="hide()">Laissez votre avis.</button>
+				                	 	<bouton class="bouton bouton-succes" onclick="hide()">Laissez votre avis.</bouton>
 				                	 	<br>
 				                        <div class="controls" id="message">
 				                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="5" style="resize:none" style="display: none;"></textarea>
 				                            <hr>
-				                            <button class="btn btn-primary" type="submit">Envoyer message !</button>
+				                            <bouton class="bouton bouton-principal" type="submit">Envoyer message !</bouton>
 				                        </div>
 				                    </div>
 				                  </form>
