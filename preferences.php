@@ -77,7 +77,7 @@
 
 						</tbody>
 					  </table>
-					  <a class="btn btn-success" href="critiques.php">Voir les critiques de cette personne.</a>
+					  <a class="btn btn-success" href="critiques.php">Modifier mes informations.</a>
 					</div>
 				  </div>
 				</div>
@@ -90,5 +90,6 @@
 		</body>
 		</html>';
 	}
-	echo 'Vous devez être connecté pour accéder à cette page';
+	else
+		echo 'Vous devez être connecté pour accéder à cette page';
 ?>
