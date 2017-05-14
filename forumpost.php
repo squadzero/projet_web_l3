@@ -1,4 +1,3 @@
-
 <?php include('header.php');?>
 <?php include('navbar.php');?> 
 
@@ -75,7 +74,7 @@
 							{
 								echo'
 								<section class="row panel-body">
-								  <section class="col-md-8 pull-right">
+								  <section class="col-md-8 forumReponse">
 									<p>'.htmlspecialchars($res3['PSEUDO']).', Le '.htmlspecialchars($res3['DATE_RPS']).'</p>
 									<p>'.htmlspecialchars($res3['TXT_RPS']).'</p>
 								  </section>
@@ -86,8 +85,18 @@
 							  <div class="row">
 								
 
-								<section class="col-md-4">
-								  <span>METTRE BOUTON POUR REPONDRE</span>
+								<section class="col-md-9">
+								  <form id="critique" name="critique" method="post" action="ajoutCommentaireSerie.php">
+				                	<div class="control-group">
+				                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
+				                	 	<br>
+				                        <div class="controls" id="message">
+				                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
+				                            <hr>
+				                            <button class="btn btn-primary" type="submit">Envoyer message !</button>
+				                        </div>
+				                    </div>
+				                  </form>
 								</section>
 							  </div>
 							</div>

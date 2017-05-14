@@ -1969,7 +1969,7 @@ i.glyphicon-comment{
 }
 
 
-/* POUR LE NOM QUAND ON EST CO */
+/* styles dernière minute*/
 #nomUser
 {
   margin-left:2%;
@@ -2000,3 +2000,6 @@ i.glyphicon-comment{
   margin-bottom: 10px;
 }
 
+.forumReponse {
+  margin-left: 100px;
+}
