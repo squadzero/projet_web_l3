@@ -17,13 +17,6 @@
 			die( 'Erreur : ' . $e->getMessage());
 		}
 		
-<<<<<<< HEAD
-	}
-	catch(PDOException $e)
-	{
-		die( 'Erreur : ' . $e->getMessage());
-	}
-	
 		echo'
 			  <div class="container">
 				<div class="row">';
