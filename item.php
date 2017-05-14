@@ -1,9 +1,8 @@
-
 <?php include('header.php');?>
 <?php include('navbar.php');?>
 
 <?php
-	if( isset($_GET['idSerie']) )
+	if(isset($_GET['idSerie']))
 	{
 		try
 		{
