@@ -1,5 +1,4 @@
 <?php
-include('connexionBD.php');
 
 		//si l'utilisateur existe
 		if( isset($_POST['mail']) && (trim($_POST['mail'])) 
