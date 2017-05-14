@@ -3,7 +3,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <bouton class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="bouton"><span class="sr-only">Navigation.</span></bouton> <a class="navbar-brand" href="index.php">Accueil</a>
+        <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="bouton"><span class="sr-only">Navigation.</span></button> <a class="navbar-brand" href="index.php">Accueil</a>
       </div>
 
 

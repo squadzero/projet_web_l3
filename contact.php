@@ -64,7 +64,7 @@
                     <div id="success">
                     </div>
                     <!-- For success/fail messages -->
-                    <bouton class="bouton bouton-principal" type="submit">Envoyer message !</bouton>
+                    <button class="bouton bouton-principal" type="submit">Envoyer message !</button>
                 </form>
             </div>
         </div>

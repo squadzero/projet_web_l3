@@ -34,7 +34,7 @@
 						<input type="text" class="form-control" placeholder="Tapez le nom, la date ou le réalisateur..." name ="search"/>
 						<div class="input-group-bouton">
 							<div class="bouton-group" role="group">
-								<bouton type="submit" class="bouton bouton-principal"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></bouton>
+								<button type="submit" class="bouton bouton-principal"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 							</div>
 						</div>
 					</div>

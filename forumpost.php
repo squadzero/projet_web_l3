@@ -88,12 +88,12 @@
 								<section class="colonne-max">
 								  <form id="critique" name="critique" method="post" action="ajoutCommentaireSerie.php">
 				                	<div class="control-group">
-				                	 	<bouton class="bouton bouton-succes" onclick="hide()">Laissez votre avis.</bouton>
+				                	 	<button class="bouton bouton-succes" onclick="hide()">Laissez votre avis.</button>
 				                	 	<br>
 				                        <div class="controls" id="message">
 				                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="5" style="resize:none" style="display: none;"></textarea>
 				                            <hr>
-				                            <bouton class="bouton bouton-principal" type="submit">Envoyer message !</bouton>
+				                            <button class="bouton bouton-principal" type="submit">Envoyer message !</button>
 				                        </div>
 				                    </div>
 				                  </form>

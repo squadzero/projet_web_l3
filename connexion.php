@@ -25,7 +25,7 @@
                             <label>Mot de passe :</label> <input class="form-control" data-validation-required-message="Veuillez entrer votre mot de passe pour vous connecter." name="mdp" required="" type="password">
                         </div>
                     </div>
-                    <bouton class="bouton bouton-principal" type="submit">Connexion.</bouton>
+                    <button class="bouton bouton-principal" type="submit">Connexion.</button>
                 </form>
             </div>
         </div>

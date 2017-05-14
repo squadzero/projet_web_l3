@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <bouton class="bouton bouton-principal" type="submit" >Inscription</bouton>
+                    <button class="bouton bouton-principal" type="submit" >Inscription</button>
 
                 </form>
             </div>
