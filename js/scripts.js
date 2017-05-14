@@ -410,7 +410,7 @@
 
 }(jQuery);
 
-function hide(obj) {
+function hide() {
     var x = document.getElementById('message');
     if (x.style.display === 'none') {
         x.style.display = 'block';

@@ -18,6 +18,7 @@
 	echo'
 		  <div class="container">
 			<div class="row">';
+
 			do
 			{
 				echo'
@@ -88,10 +89,10 @@
 								<section class="col-md-9">
 								  <form id="critique" name="critique" method="post" action="ajoutCommentaireSerie.php">
 				                	<div class="control-group">
-				                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
+				                	 	<button class="btn btn-success" onclick="hide()">Laissez votre avis.</button>
 				                	 	<br>
 				                        <div class="controls" id="message">
-				                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
+				                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="5" style="resize:none" style="display: none;"></textarea>
 				                            <hr>
 				                            <button class="btn btn-primary" type="submit">Envoyer message !</button>
 				                        </div>
