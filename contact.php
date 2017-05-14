@@ -6,7 +6,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="colonne-large-12">
                 <h1 class="page-header">Contact.</h1>
 
 
@@ -22,7 +22,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="colonne-max">
                 <h3>Envoyez nous un message !</h3>
                 <br>
 
@@ -64,7 +64,7 @@
                     <div id="success">
                     </div>
                     <!-- For success/fail messages -->
-                    <button class="btn btn-primary" type="submit">Envoyer message !</button>
+                    <bouton class="bouton bouton-principal" type="submit">Envoyer message !</bouton>
                 </form>
             </div>
         </div>

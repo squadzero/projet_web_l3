@@ -71,12 +71,12 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12"><br>
+				<div class="colonne-min2"><br>
 				<img id="image_indi" alt="" class="img-responsive" src="'.htmlspecialchars($res2['URL']).'">
 				</div>
 
 
-				<div class="col-md-6">
+				<div class="colonne-grande">
 					<div class="caption-full">
 						<h3>'.htmlspecialchars($res['PREN_IND']).' '.htmlspecialchars($res['NOM_IND']).'.<br>
 						<small>'.$role.'</small></h3>
@@ -154,14 +154,14 @@
 					</ul>
 					<!-- <div class="well">
 						<div class="text-right">
-							<a class="btn btn-success">Laissez un avis.</a>
+							<a class="bouton bouton-succes">Laissez un avis.</a>
 						</div>
 
 						<hr>
 
 
 						<div class="row">
-							<div class="col-md-12">
+							<div class="colonne-min2">
 								<span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
 
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -172,7 +172,7 @@
 
 
 						<div class="row">
-							<div class="col-md-12">
+							<div class="colonne-min2">
 								<span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
 
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -183,7 +183,7 @@
 
 
 						<div class="row">
-							<div class="col-md-12">
+							<div class="colonne-min2">
 								<span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span> Anonymous <span class="pull-right">Il y a x jours.</span>
 
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

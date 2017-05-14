@@ -10,7 +10,7 @@
 
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="colonne-large-12">
                 <h1 class="page-header">Inscription.</h1>
 
 
@@ -27,7 +27,7 @@
 
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="colonne-max">
                 <h3>Entrez vos identifiants pour vous inscrire.</h3>
                 <br>
 
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-primary" type="submit" >Inscription</button>
+                    <bouton class="bouton bouton-principal" type="submit" >Inscription</bouton>
 
                 </form>
             </div>

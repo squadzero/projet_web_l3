@@ -27,7 +27,7 @@
 			echo '
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-12">
+						<div class="colonne-large-12">
 							<h1 class="page-header">Résultats de la recherche
 								<small>Résultats de la recherche "' . htmlspecialchars($_POST['search']) . '".</small>
 							</h1>
@@ -70,13 +70,13 @@
 								
 								echo'
 									<div class="row">
-										<div class="col-md-7">
+										<div class="colonne-grande2">
 											<a href="item.php?idSerie='.htmlspecialchars($res['ID_SERIE']).'"><img src="'.htmlspecialchars($res3['URL']).'" alt=""></a>
 										</div>
-										<div class="col-md-5">
+										<div class="colonne-moy2">
 											<h3>'.htmlspecialchars($res['TITRE_SERIE']).'</h3>
 											<h4>'.htmlspecialchars($res4['NOM_GENRE']).'</h4>
-											<a class="btn btn-primary" href="item.php?idSerie='.htmlspecialchars($res['ID_SERIE']).'">Voir série.</i></a>
+											<a class="bouton bouton-principal" href="item.php?idSerie='.htmlspecialchars($res['ID_SERIE']).'">Voir série.</i></a>
 										</div>
 									</div>
 									<hr>
@@ -101,12 +101,12 @@
 								
 								echo'
 									<div class="row">
-										<div class="col-md-7">
+										<div class="colonne-grande2">
 											<a href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'"><img src="'.htmlspecialchars($res3['URL']).'" alt=""></a>
 										</div>
-										<div class="col-md-5">
+										<div class="colonne-moy2">
 											<h3>'.htmlspecialchars($res5['PREN_IND']).' '.htmlspecialchars($res5['NOM_IND']).'</h3>
-											<a class="btn btn-primary" href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'">Voir personne.</i></a>
+											<a class="bouton bouton-principal" href="acteurUni.php?idInd='.htmlspecialchars($res5['ID_IND']).'">Voir personne.</i></a>
 										</div>
 									</div>
 									<hr>
