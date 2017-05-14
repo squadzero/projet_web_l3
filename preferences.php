@@ -4,7 +4,7 @@
 
 	
 	<?php
-	if( isset($_SESSION['login']))
+	if( isset($_SESSION['login']) && (trim($_SESSION['login'])!='') )
 	{
 		try
 		{
@@ -90,4 +90,5 @@
 		</body>
 		</html>';
 	}
+	echo 'Vous devez être connecté pour accéder à cette page';
 ?>
