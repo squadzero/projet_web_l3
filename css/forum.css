@@ -34,22 +34,22 @@ hr {
      -moz-box-sizing: content-box;
           box-sizing: content-box;
 }
-bouton {
+button {
   margin: 0;
   font: inherit;
   color: inherit;
 }
-bouton {
+button {
   overflow: visible;
 }
-bouton {
+button {
   text-transform: none;
 }
-bouton {
-  -webkit-appearance: bouton;
+button {
+  -webkit-appearance: button;
   cursor: pointer;
 }
-bouton::-moz-focus-inner {
+button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
@@ -88,7 +88,7 @@ bouton::-moz-focus-inner {
   .navbar {
     display: none;
   }
-  .bouton > .caret {
+  .btn > .caret {
     border-top-color: #000 !important;
   }
 }
@@ -136,7 +136,7 @@ body {
   color: #333;
   background-color: #fff;
 }
-bouton {
+button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -174,7 +174,7 @@ hr {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-[role="bouton"] {
+[role="button"] {
   cursor: pointer;
 }
 h2 {
@@ -267,36 +267,36 @@ abbr[title] {
   margin-right: -15px;
   margin-left: -15px;
 }
-.colonne-petite, .colonne-petite-moy, .colonne-moy, .colonne-grande, .colonne-max, .colonne-min2 {
+.col-md-2, .col-md-3, .col-md-4, .col-md-6, .col-md-9, .col-md-12 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
 @media (min-width: 992px) {
-  .colonne-petite, .colonne-petite-moy, .colonne-moy, .colonne-grande, .colonne-max, .colonne-min2 {
+  .col-md-2, .col-md-3, .col-md-4, .col-md-6, .col-md-9, .col-md-12 {
     float: left;
   }
-  .colonne-min2 {
+  .col-md-12 {
     width: 100%;
   }
-  .colonne-max {
+  .col-md-9 {
     width: 75%;
   }
-  .colonne-grande {
+  .col-md-6 {
     width: 50%;
   }
-  .colonne-moy {
+  .col-md-4 {
     width: 33.33333333%;
   }
-  .colonne-petite-moy {
+  .col-md-3 {
     width: 25%;
   }
-  .colonne-petite {
+  .col-md-2 {
     width: 16.66666667%;
   }
 }
-.bouton {
+.btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -317,112 +317,112 @@ abbr[title] {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-.bouton:focus,
-.bouton:active:focus {
+.btn:focus,
+.btn:active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.bouton:hover,
-.bouton:focus {
+.btn:hover,
+.btn:focus {
   color: #333;
   text-decoration: none;
 }
-.bouton:active {
+.btn:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
           box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
-.bouton-principal {
+.btn-primary {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-.bouton-principal:focus {
+.btn-primary:focus {
   color: #fff;
   background-color: #286090;
   border-color: #122b40;
 }
-.bouton-principal:hover {
+.btn-primary:hover {
   color: #fff;
   background-color: #286090;
   border-color: #204d74;
 }
-.bouton-principal:active {
+.btn-primary:active {
   color: #fff;
   background-color: #286090;
   border-color: #204d74;
 }
-.bouton-principal:active:hover,
-.bouton-principal:active:focus {
+.btn-primary:active:hover,
+.btn-primary:active:focus {
   color: #fff;
   background-color: #204d74;
   border-color: #122b40;
 }
-.bouton-principal:active {
+.btn-primary:active {
   background-image: none;
 }
-.bouton-succes {
+.btn-success {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
-.bouton-succes:focus {
+.btn-success:focus {
   color: #fff;
   background-color: #449d44;
   border-color: #255625;
 }
-.bouton-succes:hover {
+.btn-success:hover {
   color: #fff;
   background-color: #449d44;
   border-color: #398439;
 }
-.bouton-succes:active {
+.btn-success:active {
   color: #fff;
   background-color: #449d44;
   border-color: #398439;
 }
-.bouton-succes:active:hover,
-.bouton-succes:active:focus {
+.btn-success:active:hover,
+.btn-success:active:focus {
   color: #fff;
   background-color: #398439;
   border-color: #255625;
 }
-.bouton-succes:active {
+.btn-success:active {
   background-image: none;
 }
-.bouton-info {
+.btn-info {
   color: #fff;
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-.bouton-info:focus {
+.btn-info:focus {
   color: #fff;
   background-color: #31b0d5;
   border-color: #1b6d85;
 }
-.bouton-info:hover {
+.btn-info:hover {
   color: #fff;
   background-color: #31b0d5;
   border-color: #269abc;
 }
-.bouton-info:active,
-.open > .dropdown-toggle.bouton-info {
+.btn-info:active,
+.open > .dropdown-toggle.btn-info {
   color: #fff;
   background-color: #31b0d5;
   border-color: #269abc;
 }
-.bouton-info:active:hover,
-.open > .dropdown-toggle.bouton-info:hover,
-.bouton-info:active:focus,
-.open > .dropdown-toggle.bouton-info:focus {
+.btn-info:active:hover,
+.open > .dropdown-toggle.btn-info:hover,
+.btn-info:active:focus,
+.open > .dropdown-toggle.btn-info:focus {
   color: #fff;
   background-color: #269abc;
   border-color: #1b6d85;
 }
-.bouton-info:active,
-.open > .dropdown-toggle.bouton-info {
+.btn-info:active,
+.open > .dropdown-toggle.btn-info {
   background-image: none;
 }
 .collapse {
@@ -497,7 +497,7 @@ abbr[title] {
     left: auto;
   }
 }
-.bouton .caret {
+.btn .caret {
   margin-left: 0;
 }
 .nav {
@@ -681,7 +681,7 @@ abbr[title] {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.navbar-bouton {
+.navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px;
 }

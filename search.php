@@ -28,20 +28,20 @@
 
 		<br>
 		<div class="row">
-			<div class="colonne-min2">
+			<div class="col-md-12">
 				<form action="results.php" id="searchForm" method="post" name="searchForm">
 					<div class="input-group" id="adv-search">
 						<input type="text" class="form-control" placeholder="Tapez le nom, la date ou le réalisateur..." name ="search"/>
-						<div class="input-group-bouton">
-							<div class="bouton-group" role="group">
-								<bouton type="submit" class="bouton bouton-principal"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></bouton>
+						<div class="input-group-btn">
+							<div class="btn-group" role="group">
+								<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 							</div>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>	
-			<div class="colonne-min2">
+			<div class="col-md-12">
 				<div class="row">';
 					do
 					{
@@ -65,7 +65,7 @@
 						}
 						echo'
 						
-							<div class="colonne-moy">
+							<div class="col-md-4">
 								<div class="thumbnail">
 									<a href="item.php?idSerie='.htmlspecialchars($res['ID_SERIE']).'"><img src="'.htmlspecialchars($res2['URL']).'" alt=""></a>
 									<div class="caption">

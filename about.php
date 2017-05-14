@@ -9,7 +9,7 @@
 
 
         <div class="row">
-            <div class="colonne-large-12">
+            <div class="col-lg-12">
                 <h1 class="page-header">À propos.</h1>
 
 
@@ -28,11 +28,11 @@
 
 
         <div class="row">
-            <div class="colonne-grande"><img alt="" class="img-responsive" src="img/projet.png">
+            <div class="col-md-6"><img alt="" class="img-responsive" src="img/projet.png">
             </div>
 
 
-            <div class="colonne-grande">
+            <div class="col-md-6">
                 <h2>Projet Web L3</h2>
 
 
@@ -50,12 +50,12 @@
 
 
         <div class="row">
-            <div class="colonne-large-12">
+            <div class="col-lg-12">
                 <h2 class="page-header">L'équipe.</h2>
             </div>
 
 
-            <div class="colonne-grande text-center">
+            <div class="col-md-6 text-center">
                 <div class="thumbnail">
                     <img alt="" class="img-responsive" src="http://placehold.it/750x450">
 
@@ -68,7 +68,7 @@
             </div>
 
 
-            <div class="colonne-grande text-center">
+            <div class="col-md-6 text-center">
                 <div class="thumbnail">
                     <img alt="" class="img-responsive" src="http://placehold.it/750x450">
 

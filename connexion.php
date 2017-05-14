@@ -8,7 +8,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="colonne-max">
+            <div class="col-md-8">
                 <h3>Entrez votre e-mail et votre mot de passe pour vous connecter.</h3>
 
 
@@ -25,7 +25,7 @@
                             <label>Mot de passe :</label> <input class="form-control" data-validation-required-message="Veuillez entrer votre mot de passe pour vous connecter." name="mdp" required="" type="password">
                         </div>
                     </div>
-                    <bouton class="bouton bouton-principal" type="submit">Connexion.</bouton>
+                    <button class="btn btn-primary" type="submit">Connexion.</button>
                 </form>
             </div>
         </div>

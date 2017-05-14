@@ -88,7 +88,7 @@
 	
     <div class="container">
         <div class="row row-centered">
-            <div class="colonne-max col-centered">
+            <div class="col-md-9 col-centered">
                 <div class="thumbnail">
                     <img alt="" class="img-responsive" src="'.htmlspecialchars($res2['URL']).'">
 
@@ -214,7 +214,7 @@
 							<hr>
 
 							<div class="row">
-								<div class="colonne-min2">';
+								<div class="col-md-12">';
 								if( $res7['NOTE_NE']==1 )
 									echo'<span class="glyphicon glyphicon-star"></span>
 									<span class="glyphicon glyphicon-star-empty"></span> 
@@ -255,7 +255,7 @@
 
 					 <form id="critique" name="critique" method="post" action="ajoutCommentaireEpi.php">
 	                	<div class="control-group">
-	                	 	<bouton class="bouton bouton-succes" onclick="hide(message)">Laissez votre avis.</bouton>
+	                	 	<button class="btn btn-success" onclick="hide(message)">Laissez votre avis.</button>
 	                	 	<br>
 	                        <div class="controls" id="message">
 	                            <textarea class="form-control"  name="commentaire" cols="100" maxlength="999" required="" rows="10" style="resize:none" style="display: none;"></textarea>
@@ -264,7 +264,7 @@
 								<input type="hidden" id="noteHidden" name="note" value="">
 
 								<div class="dropdown">
-                        			<bouton aria-expanded="true" aria-haspopup="true" class="bouton bouton-defaut dropdown-toggle" data-toggle="dropdown" type="bouton">Attribuez votre note (sur 5)... <span class="caret"></span></bouton>
+                        			<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Attribuez votre note (sur 5)... <span class="caret"></span></button>
 
 			                        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
 			                          	<li>
@@ -285,7 +285,7 @@
                         			</ul>
 
                       			</div>
-                      			<bouton class="bouton bouton-principal" type="submit">Envoyer message !</bouton>
+                      			<button class="btn btn-primary" type="submit">Envoyer message !</button>
 	                        </div>
 	                    </div>
 	                </form>
