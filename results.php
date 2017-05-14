@@ -7,7 +7,7 @@
 		{
 			try
 			{
-				$req = $db->prepare("SELECT ID_SERIE, TITRE_SERIE, ANNEE_SERIE, PAYS_SERIE, SUM_SERIE from series, individus
+				$req = $db->prepare("SELECT ID_SERIE, TITRE_SERIE, ANNEE_SERIE, PAYS_SERIE, SUM_SERIE from series JOIN individus
 					WHERE TITRE_SERIE=:search OR NOM_IND =:search OR ANNEE_SERIE =:search;");
 				$req->bindValue(':search', htmlspecialchars($_POST['search']));
 				$req->execute();
@@ -40,8 +40,7 @@
 					</div>
 				';
 
-					do 
-					{
+					
 						try
 						{
 							$req4 = $db->prepare("SELECT NOM_GENRE FROM etre_du_genre WHERE ID_SERIE=:idSerie;");
@@ -66,8 +65,7 @@
 								</div>
 								<hr>
 							';
-							
-					}while ($res = $req->fetch(PDO::FETCH_ASSOC) );
+
 					echo '
 				</div>
 			<hr>
