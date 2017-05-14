@@ -7,7 +7,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Contact. <small>Sous-titre.</small></h1>
+                <h1 class="page-header">Contact.</h1>
 
 
                 <ol class="breadcrumb">
@@ -56,7 +56,7 @@
                         <div class="controls">
                             <label>Message :</label> 
 
-                            <textarea class="form-control" cols="100" data-validation-required-message="Entrez votre message." id="message" maxlength="999" required="" rows="10" style="resize:none"></textarea>
+                            <textarea class="form-control" cols="100" data-validation-required-message="Entrez votre message." id="message-oui" maxlength="999" required="" rows="10" style="resize:none"></textarea>
                         </div>
                     </div>
 
